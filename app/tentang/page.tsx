@@ -2,283 +2,346 @@
 
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import Link from "next/link";
+
+const S = {
+  mono: {
+    fontFamily: "'Courier New', monospace",
+    fontSize: 12,
+    letterSpacing: "0.28px",
+    textTransform: "uppercase" as const,
+    color: "#93939f",
+  },
+  pillBtn: {
+    display: "inline-flex",
+    alignItems: "center",
+    background: "#17171c",
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: 500,
+    padding: "12px 24px",
+    borderRadius: 32,
+    textDecoration: "none",
+    border: "none",
+    cursor: "pointer",
+    whiteSpace: "nowrap" as const,
+  },
+  pillOutline: {
+    display: "inline-flex",
+    alignItems: "center",
+    background: "transparent",
+    color: "#17171c",
+    fontSize: 14,
+    fontWeight: 500,
+    padding: "12px 24px",
+    borderRadius: 30,
+    textDecoration: "none",
+    border: "1px solid #17171c",
+    cursor: "pointer",
+    whiteSpace: "nowrap" as const,
+  },
+};
+
+const stats = [
+  { number: "17+", label: "Tahun Pengalaman" },
+  { number: "500+", label: "Klien Puas" },
+  { number: "1000+", label: "Transaksi Berhasil" },
+  { number: "50+", label: "Negara Tujuan" },
+];
+
+const team = [
+  { name: "Budi Santoso", role: "Direktur Utama", bio: "15+ tahun di industri forwarder Indonesia." },
+  { name: "Siti Nurhaliza", role: "Manager Ekspor", bio: "Spesialis dokumen ekspor komoditas pertanian & farmasi." },
+  { name: "Ahmad Rizki", role: "Manager Impor", bio: "Expert customs clearance & regulasi impor." },
+  { name: "Maya Purnama", role: "Customer Success", bio: "Dedicated support untuk kepuasan klien." },
+];
 
 export default function Tentang() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#fff" }}>
       <Header />
 
-      <main className="flex-grow">
+      <main style={{ flex: 1 }}>
+
         {/* Hero */}
-        <section className="bg-[#2962FF] text-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold">Tentang Forwarder Express</h1>
-            <p className="text-blue-100 mt-2">
-              Partner terpercaya untuk ekspor dan impor Anda
+        <section style={{ padding: "80px 32px 64px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 16 }}>Tentang Kami</p>
+            <h1 style={{
+              fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+              fontSize: "clamp(40px, 5vw, 72px)",
+              fontWeight: 400,
+              lineHeight: 1.05,
+              letterSpacing: "-1.44px",
+              color: "#17171c",
+              maxWidth: 700,
+              marginBottom: 24,
+            }}>
+              International Freight Forwarder sejak 2007
+            </h1>
+            <p style={{ fontSize: 18, color: "#616161", maxWidth: 520, lineHeight: 1.5, marginBottom: 40 }}>
+              PT. Safe Shipping Services — full services International Freight Forwarder & Logistics company, member of ALFI / ILFA.
             </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <Link href="/kontak" style={S.pillBtn}>Hubungi Kami</Link>
+              <Link href="/layanan" style={S.pillOutline}>Lihat Layanan →</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section style={{ padding: "0 32px 80px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 1,
+              background: "#d9d9dd",
+              borderRadius: 8,
+              overflow: "hidden",
+            }} className="stats-grid">
+              {stats.map((s) => (
+                <div key={s.label} style={{ background: "#fff", padding: "32px 24px", textAlign: "center" }}>
+                  <p style={{
+                    fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+                    fontSize: 48,
+                    fontWeight: 400,
+                    letterSpacing: "-1px",
+                    color: "#17171c",
+                    lineHeight: 1,
+                    marginBottom: 8,
+                  }}>
+                    {s.number}
+                  </p>
+                  <p style={{ fontSize: 13, color: "#93939f" }}>{s.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Visi Misi */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-blue-50 p-8 rounded-lg border-l-4 border-[#2962FF] text-center">
-                <h2 className="text-2xl font-bold mb-4 text-[#2962FF]">Visi</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  Menjadi perusahaan forwarder terdepan yang memudahkan bisnis
-                  ekspor-impor di Indonesia.
-                </p>
-              </div>
-              <div className="bg-green-50 p-8 rounded-lg border-l-4 border-green-600 text-center">
-                <h2 className="text-2xl font-bold mb-4 text-[#00E5FF]">Misi</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  Menyediakan layanan forwarder profesional dengan harga kompetitif
-                  dan layanan terpercaya.
-                </p>
-              </div>
-              <div className="bg-orange-50 p-8 rounded-lg border-l-4 border-orange-600 text-center">
-                <h2 className="text-2xl font-bold mb-4 text-orange-600">Nilai</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  Integritas, Profesionalisme, Transparansi, dan Kepuasan
-                  Pelanggan adalah prioritas utama kami.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Sejarah & Pengalaman */}
-        <section className="py-16 bg-gradient-to-b from-white to-[#E3F2FD]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center">Pengalaman & Kepercayaan</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-              {[
-                { number: "15+", label: "Tahun Pengalaman" },
-                { number: "500+", label: "Klien Puas" },
-                { number: "1000+", label: "Transaksi Berhasil" },
-                { number: "50+", label: "Negara Tujuan" },
-              ].map((item, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg text-center shadow-md">
-                  <div className="text-4xl font-bold text-[#2962FF] mb-2">
-                    {item.number}
-                  </div>
-                  <p className="text-gray-600 text-sm">{item.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-white p-8 rounded-lg border-l-4 border-[#2962FF]">
-              <p className="text-gray-700 leading-relaxed">
-                Forwarder Express didirikan pada tahun 2010 dengan komitmen untuk
-                menyediakan layanan forwarder berkualitas tinggi. Dengan tim
-                profesional yang berpengalaman lebih dari 15 tahun di industri
-                ekspor-impor, kami telah membantu ratusan klien mencapai target
-                bisnis mereka. Kepercayaan klien adalah aset terbesar kami.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Tim */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center">Tim Profesional Kami</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 40 }}>Nilai Perusahaan</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="three-col">
               {[
                 {
-                  name: "Budi Santoso",
-                  role: "Direktur Utama",
-                  bio: "15+ tahun di industri forwarder",
+                  label: "Visi",
+                  title: "Menjadi forwarder terdepan",
+                  body: "Menjadi perusahaan forwarder terdepan yang memudahkan bisnis ekspor-impor di Indonesia.",
                 },
                 {
-                  name: "Siti Nurhaliza",
-                  role: "Manager Ekspor",
-                  bio: "Spesialis dokumen ekspor komoditas",
+                  label: "Misi",
+                  title: "Layanan profesional & kompetitif",
+                  body: "Menyediakan layanan forwarder profesional dengan harga kompetitif dan kepercayaan penuh.",
                 },
                 {
-                  name: "Ahmad Rizki",
-                  role: "Manager Impor",
-                  bio: "Expert customs clearance & impor",
+                  label: "Nilai",
+                  title: "Integritas & transparansi",
+                  body: "Integritas, profesionalisme, transparansi, dan kepuasan pelanggan adalah prioritas utama kami.",
                 },
-                {
-                  name: "Maya Purnama",
-                  role: "Customer Success",
-                  bio: "Dedicated support untuk klien",
-                },
-              ].map((member, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                  <div className="w-full h-40 bg-gradient-to-r from-blue-400 to-blue-600"></div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-bold text-lg">{member.name}</h3>
-                    <p className="text-[#2962FF] font-semibold text-sm">{member.role}</p>
-                    <p className="text-gray-600 text-sm mt-2">{member.bio}</p>
-                  </div>
+              ].map((v) => (
+                <div key={v.label} style={{ background: "#fff", borderRadius: 8, padding: 28 }}>
+                  <p style={{ ...S.mono, marginBottom: 12 }}>{v.label}</p>
+                  <h3 style={{ fontSize: 20, fontWeight: 400, color: "#17171c", lineHeight: 1.3, marginBottom: 12 }}>{v.title}</h3>
+                  <p style={{ fontSize: 14, color: "#616161", lineHeight: 1.6 }}>{v.body}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Sertifikasi & Legalitas */}
-        <section className="py-16 bg-gradient-to-b from-white to-[#E3F2FD]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center">Sertifikasi & Legalitas</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg border-l-4 border-green-600 shadow-md">
-                <h3 className="font-bold text-lg mb-4">Izin & Sertifikasi</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#00E5FF] font-bold">✓</span>
-                    <span>Terdaftar di Bea Cukai Direktorat Jenderal Bea dan
-                    Cukai</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#00E5FF] font-bold">✓</span>
-                    <span>Izin Usaha Perdagangan (SIUP)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#00E5FF] font-bold">✓</span>
-                    <span>Surat Izin Usaha Jasa Pengiriman</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#00E5FF] font-bold">✓</span>
-                    <span>NPWP dan Sertifikat PKP</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#00E5FF] font-bold">✓</span>
-                    <span>Anggota Asosiasi Forwarder Indonesia</span>
-                  </li>
-                </ul>
+        {/* Story */}
+        <section style={{ padding: "80px 32px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 64,
+              alignItems: "center",
+            }} className="two-col">
+              <div>
+                <p style={{ ...S.mono, marginBottom: 16 }}>Cerita Kami</p>
+                <h2 style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "clamp(28px, 3vw, 40px)",
+                  fontWeight: 400,
+                  letterSpacing: "-0.4px",
+                  color: "#17171c",
+                  lineHeight: 1.2,
+                  marginBottom: 20,
+                }}>
+                  Berdiri sejak 2007, tumbuh bersama klien
+                </h2>
+                <p style={{ fontSize: 15, color: "#616161", lineHeight: 1.7, marginBottom: 16 }}>
+                  PT. Safe Shipping Services didirikan dengan visi menjadi market leader di industri freight forwarding. Dimulai dengan komitmen untuk menyediakan comprehensive menu of service, kami kini telah menjadi salah satu perusahaan paling stabil dan dedicated di bidang ini.
+                </p>
+                <p style={{ fontSize: 15, color: "#616161", lineHeight: 1.7 }}>
+                  Dengan pengalaman lebih dari 17 tahun, kami menyediakan integrated total logistics solution via air, ocean, inland transportation, dan warehousing — dengan tim spesialis beranalitik dan berpengalaman operasional.
+                </p>
               </div>
-              <div className="bg-white p-6 rounded-lg border-l-4 border-[#2962FF] shadow-md">
-                <h3 className="font-bold text-lg mb-4">Komitmen Kami</h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#2962FF] font-bold">✓</span>
-                    <span>Semua transaksi 100% legal dan sesuai regulasi</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#2962FF] font-bold">✓</span>
-                    <span>Transparansi penuh dalam setiap proses</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#2962FF] font-bold">✓</span>
-                    <span>Garansi layanan profesional dan bertanggung jawab</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#2962FF] font-bold">✓</span>
-                    <span>Dukungan pelanggan 24/7 (via WhatsApp)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#2962FF] font-bold">✓</span>
-                    <span>Solusi cepat untuk setiap kendala</span>
-                  </li>
+              <div style={{
+                background: "#003c33",
+                borderRadius: 22,
+                padding: 40,
+                color: "#fff",
+              }}>
+                <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 24 }}>Sertifikasi & Legalitas</p>
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 14 }}>
+                  {[
+                    "Member of ALFI / ILFA",
+                    "Terdaftar sebagai PPJK Company di Direktorat Jenderal Bea dan Cukai",
+                    "Electronic Custom Clearance (EDI System)",
+                    "Izin Usaha Jasa Freight Forwarding",
+                    "NPWP dan Sertifikat PKP",
+                  ].map((item) => (
+                    <li key={item} style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", paddingLeft: 20, position: "relative", lineHeight: 1.5 }}>
+                      <span style={{ position: "absolute", left: 0, color: "#a8f0a0", fontWeight: 600 }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Lokasi */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center">Lokasi Kantor</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <div className="bg-gray-300 rounded-lg h-64 flex items-center justify-center">
-                  <svg
-                    className="w-24 h-24 text-gray-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+        {/* Team */}
+        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 12 }}>Tim Kami</p>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(28px, 3vw, 40px)",
+              fontWeight: 400,
+              letterSpacing: "-0.4px",
+              color: "#17171c",
+              marginBottom: 40,
+            }}>
+              Profesional berpengalaman
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }} className="team-grid">
+              {team.map((member, i) => {
+                const colors = ["#003c33", "#17171c", "#1863dc", "#9b60aa"];
+                return (
+                  <div key={member.name} style={{ background: "#fff", borderRadius: 8, overflow: "hidden" }}>
+                    <div style={{ height: 120, background: colors[i % colors.length] }} />
+                    <div style={{ padding: 20 }}>
+                      <p style={{ fontSize: 15, fontWeight: 500, color: "#17171c", marginBottom: 4 }}>{member.name}</p>
+                      <p style={{ fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.4px", color: "#93939f", marginBottom: 8 }}>{member.role}</p>
+                      <p style={{ fontSize: 13, color: "#616161", lineHeight: 1.5 }}>{member.bio}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Kantor & Cabang */}
+        <section style={{ padding: "80px 32px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 12 }}>Our Offices & Branches</p>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(28px, 3vw, 40px)",
+              fontWeight: 400,
+              letterSpacing: "-0.4px",
+              color: "#17171c",
+              marginBottom: 40,
+            }}>
+              3 Lokasi di Indonesia
+            </h2>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 1,
+              background: "#d9d9dd",
+              borderRadius: 8,
+              overflow: "hidden",
+            }} className="three-col">
+              {[
+                {
+                  city: "Jakarta Utara",
+                  label: "Kantor Pusat",
+                  address: "Jl. Kebon Bawang V No.16/2B RT/RW.011/08, Kel. Kebon Kosong, Kec. Tanjung Priok",
+                  phone: "(62-21) 2945 2306 - 308",
+                  fax: "(62-21) 2945 2304",
+                },
+                {
+                  city: "Pontianak",
+                  label: "Kalimantan Barat",
+                  address: "Jl. H.Rais arrahman, Gunung palong 1 No.3",
+                  phone: "(+62 561) 8104029",
+                  fax: "(+62 561) 8104029",
+                },
+                {
+                  city: "Palembang",
+                  label: "Sumatera Selatan",
+                  address: "Jl. Yos Sudorso Komp.lemabang Mas No.138 DD Rt.002/01, Kel. 3 Ilir, Kec. Ilir Timur II",
+                  phone: "(+62) 711 5625 131",
+                  fax: "(+62) 711 5625 132",
+                },
+              ].map((office) => (
+                <div key={office.city} style={{ background: "#fff", padding: 28 }}>
+                  <p style={{ ...S.mono, marginBottom: 8 }}>{office.label}</p>
+                  <p style={{ fontSize: 20, fontWeight: 400, color: "#17171c", marginBottom: 12 }}>{office.city}</p>
+                  <p style={{ fontSize: 13, color: "#616161", lineHeight: 1.6, marginBottom: 12 }}>{office.address}</p>
+                  <p style={{ fontSize: 13, color: "#93939f" }}>📞 {office.phone}</p>
+                  <p style={{ fontSize: 13, color: "#93939f" }}>📠 {office.fax}</p>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Kantor Pusat Jakarta</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">📍</span>
-                    <div>
-                      <p className="font-bold">Alamat</p>
-                      <p className="text-gray-600">
-                        Jl. Gatot Subroto No. 123, Jakarta Pusat, 12000
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">📞</span>
-                    <div>
-                      <p className="font-bold">Telepon</p>
-                      <p className="text-gray-600">+62-21-XXXX-XXXX</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">📧</span>
-                    <div>
-                      <p className="font-bold">Email</p>
-                      <p className="text-gray-600">info@forwarder.id</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">💬</span>
-                    <div>
-                      <p className="font-bold">WhatsApp</p>
-                      <p className="text-gray-600">+62-812-3456-7890</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">🕐</span>
-                    <div>
-                      <p className="font-bold">Jam Operasional</p>
-                      <p className="text-gray-600">
-                        Senin-Jumat: 08:00-17:00 WIB
-                        <br />
-                        Sabtu: 08:00-13:00 WIB
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#2962FF] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Bergabung dengan Ratusan Klien Kami
-            </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Mari kita wujudkan target ekspor-impor Anda bersama-sama
-            </p>
+        <section style={{
+          background: "#003c33",
+          color: "#fff",
+          padding: "80px 32px",
+          margin: "0 32px 80px",
+          borderRadius: 22,
+        }} className="full-bleed-mobile">
+          <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
+            <div>
+              <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 16 }}>Bergabung</p>
+              <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.4px", maxWidth: 440 }}>
+                Bergabung dengan ratusan klien kami
+              </h2>
+              <p style={{ fontSize: 16, color: "rgba(255,255,255,0.7)", marginTop: 12 }}>
+                Mari wujudkan target ekspor-impor Anda bersama kami
+              </p>
+            </div>
             <a
               href="https://wa.me/621234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-[#00E5FF] text-white rounded-lg font-bold hover:bg-[#1AE5FF] transition"
+              style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
             >
               Hubungi Kami Sekarang
             </a>
           </div>
         </section>
+
       </main>
 
       <Footer />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .two-col { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .three-col { grid-template-columns: 1fr !important; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
+        }
+        @media (max-width: 1024px) {
+          .three-col { grid-template-columns: repeat(2, 1fr) !important; }
+          .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </div>
   );
 }

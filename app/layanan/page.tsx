@@ -2,213 +2,235 @@
 
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import Link from "next/link";
+
+const S = {
+  mono: {
+    fontFamily: "'Courier New', monospace",
+    fontSize: 12,
+    letterSpacing: "0.28px",
+    textTransform: "uppercase" as const,
+    color: "#93939f",
+  },
+  pillBtn: {
+    display: "inline-flex",
+    alignItems: "center",
+    background: "#17171c",
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: 500,
+    padding: "12px 24px",
+    borderRadius: 32,
+    textDecoration: "none",
+    border: "none",
+    cursor: "pointer",
+    whiteSpace: "nowrap" as const,
+  },
+  pillOutline: {
+    display: "inline-flex",
+    alignItems: "center",
+    background: "transparent",
+    color: "#17171c",
+    fontSize: 14,
+    fontWeight: 500,
+    padding: "12px 24px",
+    borderRadius: 30,
+    textDecoration: "none",
+    border: "1px solid #17171c",
+    cursor: "pointer",
+    whiteSpace: "nowrap" as const,
+  },
+};
+
+const checkItems = (items: string[]) => (
+  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+    {items.map((item) => (
+      <li key={item} style={{ fontSize: 15, color: "#616161", paddingLeft: 24, position: "relative" }}>
+        <span style={{ position: "absolute", left: 0, color: "#003c33", fontWeight: 600 }}>✓</span>
+        {item}
+      </li>
+    ))}
+  </ul>
+);
 
 export default function Layanan() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#fff" }}>
       <Header />
 
-      <main className="flex-grow">
+      <main style={{ flex: 1 }}>
+
         {/* Hero */}
-        <section className="bg-gradient-to-r from-[#2962FF] to-[#00E5FF] text-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold">Layanan Kami</h1>
-            <p className="text-blue-100 mt-2">
-              Solusi lengkap untuk kebutuhan ekspor dan impor Anda
+        <section style={{ padding: "80px 32px 64px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 16 }}>Layanan Kami</p>
+            <h1 style={{
+              fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+              fontSize: "clamp(40px, 5vw, 72px)",
+              fontWeight: 400,
+              lineHeight: 1.05,
+              letterSpacing: "-1.44px",
+              color: "#17171c",
+              maxWidth: 700,
+              marginBottom: 24,
+            }}>
+              Total logistics solution untuk bisnis Anda
+            </h1>
+            <p style={{ fontSize: 18, color: "#616161", maxWidth: 520, lineHeight: 1.5, marginBottom: 40 }}>
+              Sea freight, air freight, trucking, warehousing, custom clearance, dan personal effect — semua dalam satu atap sejak 2007.
             </p>
-          </div>
-        </section>
-
-        {/* Layanan Ekspor */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <div className="w-full h-64 bg-gradient-to-br from-[#E3F2FD] to-[#B3E5FC] rounded-lg flex items-center justify-center border-2 border-[#2962FF]">
-                  <svg
-                    className="w-32 h-32 text-[#2962FF]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">🚢 Layanan Ekspor</h2>
-                <p className="text-gray-600 mb-4">
-                  Kami membantu Anda mengirimkan produk ke seluruh dunia dengan
-                  lancar dan aman.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Handling Dokumen Ekspor</h4>
-                      <p className="text-gray-600 text-sm">
-                        Invoice, Packing List, NPWP, Surat Izin, dll.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Koordinasi dengan Kepabeanan</h4>
-                      <p className="text-gray-600 text-sm">
-                        Pengurusan bea cukai dan customs clearance.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Logistik & Pengiriman</h4>
-                      <p className="text-gray-600 text-sm">
-                        Arrangement dengan berbagai kapal & maskapai.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="https://wa.me/621234567890?text=Saya%20ingin%20konsultasi%20tentang%20layanan%20ekspor"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-[#2962FF] text-white rounded-lg font-bold hover:bg-[#1E53E5] transition shadow-lg"
-                >
-                  Konsultasi Ekspor
-                </a>
-              </div>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <a
+                href="https://wa.me/621234567890?text=Saya%20ingin%20konsultasi%20tentang%20layanan%20ekspor-impor"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={S.pillBtn}
+              >
+                Konsultasi Gratis
+              </a>
+              <Link href="/proses" style={S.pillOutline}>
+                Lihat Proses →
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* Layanan Impor */}
-        <section className="py-16 bg-gradient-to-b from-white to-[#E3F2FD]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="w-full h-64 bg-gradient-to-br from-[#E3F2FD] to-[#B3E5FC] rounded-lg flex items-center justify-center border-2 border-[#2962FF]">
-                  <svg
-                    className="w-32 h-32 text-[#2962FF]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 19l9 2-9-18-9 18 9-2m0 0v-8m0 8H3m0 0h18"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">📥 Layanan Impor</h2>
-                <p className="text-gray-600 mb-4">
-                  Proses impor barang dari luar negeri dengan mulus dan
-                  terpercaya.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Persiapan Dokumen Impor</h4>
-                      <p className="text-gray-600 text-sm">
-                        Invoice luar negeri, Bill of Lading, Surat Keterangan.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Customs Entry & Clearance</h4>
-                      <p className="text-gray-600 text-sm">
-                        Pengurusan masuk barang ke Indonesia.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl text-[#00E5FF]">✓</span>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Pelepasan & Pengiriman</h4>
-                      <p className="text-gray-600 text-sm">
-                        Pelepasan barang dan pengiriman ke tujuan Anda.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="https://wa.me/621234567890?text=Saya%20ingin%20konsultasi%20tentang%20layanan%20impor"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-[#2962FF] text-white rounded-lg font-bold hover:bg-[#1E53E5] transition shadow-lg"
-                >
-                  Konsultasi Impor
-                </a>
-              </div>
+        {/* Ekspor & Impor cards */}
+        <section style={{ padding: "0 32px 80px", background: "#fff" }}>
+          <div style={{
+            maxWidth: 960,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 24,
+          }} className="two-col">
+
+            {/* Sea Freight */}
+            <div style={{ background: "#003c33", borderRadius: 22, padding: 40, color: "#fff" }}>
+              <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 20 }}>Ocean Freight</p>
+              <h2 style={{ fontSize: 32, fontWeight: 400, lineHeight: 1.2, marginBottom: 16 }}>
+                Sea Freight — FCL & LCL
+              </h2>
+              <p style={{ fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.6, marginBottom: 28 }}>
+                Full Container Load dan Less Container Load ocean freight forwarding ke seluruh dunia dengan worldwide agencies network.
+              </p>
+              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
+                {[
+                  "Handling FCL / LCL shipment worldwide",
+                  "Worldwide agencies network",
+                  "Project cargo handling",
+                  "NVOCC operation",
+                  "Ex-Work Terms Services",
+                ].map((item) => (
+                  <li key={item} style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", paddingLeft: 20, position: "relative" }}>
+                    <span style={{ position: "absolute", left: 0, color: "#a8f0a0", fontWeight: 600 }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://wa.me/6221294523060"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
+              >
+                Tanya Sea Freight
+              </a>
+            </div>
+
+            {/* Air Freight */}
+            <div style={{ background: "#eeece7", borderRadius: 22, padding: 40 }}>
+              <p style={{ ...S.mono, marginBottom: 20 }}>Air Freight</p>
+              <h2 style={{ fontSize: 32, fontWeight: 400, lineHeight: 1.2, color: "#17171c", marginBottom: 16 }}>
+                Air Freight — Daily Distribution
+              </h2>
+              <p style={{ fontSize: 15, color: "#616161", lineHeight: 1.6, marginBottom: 28 }}>
+                Layanan air freight komprehensif dengan distribusi harian terjamin ke dan dari semua bandara utama di dunia.
+              </p>
+              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
+                {[
+                  "Worldwide consolidation",
+                  "Import / Export Custom Clearance",
+                  "Import / Export Documentation",
+                  "Confirmed Departure and Arrival",
+                ].map((item) => (
+                  <li key={item} style={{ fontSize: 14, color: "#616161", paddingLeft: 20, position: "relative" }}>
+                    <span style={{ position: "absolute", left: 0, color: "#003c33", fontWeight: 600 }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://wa.me/6221294523060"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={S.pillBtn}
+              >
+                Tanya Air Freight
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Perizinan & Dokumentasi */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">
-              📋 Perizinan & Dokumentasi
+        {/* Layanan Lainnya */}
+        <section style={{ padding: "80px 32px", background: "#fff" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 12 }}>Layanan Lainnya</p>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(28px, 3vw, 40px)",
+              fontWeight: 400,
+              lineHeight: 1.2,
+              letterSpacing: "-0.4px",
+              color: "#17171c",
+              marginBottom: 40,
+              maxWidth: 540,
+            }}>
+              Layanan logistik lengkap dari satu pintu
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 1,
+              background: "#d9d9dd",
+              borderRadius: 8,
+              overflow: "hidden",
+            }} className="three-col-border">
               {[
                 {
-                  title: "Izin & Surat (Ekspor)",
-                  items: [
-                    "Surat Izin Menteri Perdagangan",
-                    "Sertifikat Kesehatan (HS)",
-                    "Surat Keterangan Asal (SKA)",
-                    "NPWP & NIB",
-                  ],
+                  title: "Domestic Inter-Island",
+                  desc: "Distribusi antar pulau di seluruh Indonesia secara efisien dan kompetitif.",
+                  items: ["Port to port service", "Door to door service", "Stuffing & Striping service"],
                 },
                 {
-                  title: "Izin & Surat (Impor)",
-                  items: [
-                    "Surat Persetujuan Impor (SPI)",
-                    "Sertifikat Fisik/Farmasi",
-                    "Angka Pengenal Impor (API)",
-                    "Rekomendasi Kesehatan",
-                  ],
+                  title: "Cargo Warehousing",
+                  desc: "Gudang operasional penuh dan Customs Container Freight Station (CFS).",
+                  items: ["Export & Import Bonded CFS", "Non-bonded distribution center", "PGB / BWT (Bonded Warehouse Transaction)", "Temporary storage / Free Zone Area"],
                 },
                 {
-                  title: "Dokumen Pengiriman",
-                  items: [
-                    "Invoice Komersial",
-                    "Packing List",
-                    "Bill of Lading (B/L)",
-                    "Air Waybill (AWB)",
-                  ],
+                  title: "Inland Trucking",
+                  desc: "Distribusi domestik untuk semua jenis kargo, full dan partial truck loads.",
+                  items: ["Containerized transport", "Bulky cargo transit", "Project cargo delivery"],
                 },
                 {
-                  title: "Dokumen Kepabeanan",
-                  items: [
-                    "PIB (Pemberitahuan Impor Barang)",
-                    "PEB (Pemberitahuan Ekspor Barang)",
-                    "Manifest Barang",
-                    "Deklarasi Pabean",
-                  ],
+                  title: "Custom Clearance",
+                  desc: "Sebagai PPJK Company dengan EDI System untuk proses clearance cepat dan akurat.",
+                  items: ["Electronic custom clearance (EDI)", "Import & export clearance", "Product-specific compliance", "Latest customs release initiatives"],
                 },
-              ].map((doc, i) => (
-                <div key={i} className="bg-gradient-to-br from-white to-[#E3F2FD] p-6 rounded-xl border-2 border-[#2962FF] border-opacity-30 shadow-md">
-                  <h3 className="text-xl font-bold mb-4 text-gray-900">{doc.title}</h3>
-                  <ul className="space-y-2">
-                    {doc.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-2">
-                        <span className="text-[#00E5FF] font-bold">✓</span>
-                        <span className="text-gray-700">{item}</span>
+                {
+                  title: "Personal Effect",
+                  desc: "Layanan global freight untuk pengiriman barang bawaan pribadi ke seluruh dunia.",
+                  items: ["Global coverage", "Door to door personal goods", "Documentation handling"],
+                },
+              ].map((svc) => (
+                <div key={svc.title} style={{ background: "#fff", padding: 28 }}>
+                  <p style={{ fontSize: 15, fontWeight: 500, color: "#17171c", marginBottom: 8 }}>{svc.title}</p>
+                  <p style={{ fontSize: 13, color: "#93939f", lineHeight: 1.5, marginBottom: 16 }}>{svc.desc}</p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
+                    {svc.items.map((item) => (
+                      <li key={item} style={{ fontSize: 13, color: "#616161", paddingLeft: 18, position: "relative" }}>
+                        <span style={{ position: "absolute", left: 0, color: "#003c33", fontWeight: 600 }}>✓</span>
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -218,28 +240,106 @@ export default function Layanan() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-gradient-to-r from-[#2962FF] to-[#00E5FF] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Butuh Layanan Forwarder?
+        {/* Paket layanan */}
+        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+          <div style={{ maxWidth: 960, margin: "0 auto" }}>
+            <p style={{ ...S.mono, marginBottom: 12 }}>Paket Layanan</p>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(28px, 3vw, 40px)",
+              fontWeight: 400,
+              lineHeight: 1.2,
+              letterSpacing: "-0.4px",
+              color: "#17171c",
+              marginBottom: 32,
+            }}>
+              Pilih paket yang sesuai kebutuhan
             </h2>
-            <p className="text-blue-100 mb-8 text-lg">
-              Hubungi kami sekarang untuk mendapatkan penawaran terbaik
-            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="three-col">
+              {[
+                {
+                  label: "Ocean",
+                  title: "Sea Freight",
+                  features: ["FCL & LCL shipment worldwide", "Worldwide agencies network", "Project cargo handling", "NVOCC operation", "Ex-Work Terms Services"],
+                },
+                {
+                  label: "Air",
+                  title: "Air Freight",
+                  features: ["Daily distribution guarantee", "Import/Export Custom Clearance", "Import/Export Documentation", "Confirmed departure & arrival", "Worldwide consolidation"],
+                },
+                {
+                  label: "Full Service",
+                  title: "Total Logistics",
+                  features: ["Sea & Air Freight", "Domestic inter-island", "Cargo warehousing (CFS)", "Inland trucking", "Custom clearance (EDI)"],
+                },
+              ].map((p) => (
+                <div key={p.title} style={{ background: "#fff", borderRadius: 8, padding: 32, display: "flex", flexDirection: "column", gap: 16 }}>
+                  <span style={{ ...S.mono }}>{p.label}</span>
+                  <h3 style={{ fontSize: 22, fontWeight: 400, lineHeight: 1.2, color: "#17171c" }}>{p.title}</h3>
+                  <hr style={{ border: "none", borderTop: "1px solid #e5e7eb" }} />
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
+                    {p.features.map((f) => (
+                      <li key={f} style={{ fontSize: 14, color: "#616161", paddingLeft: 20, position: "relative" }}>
+                        <span style={{ position: "absolute", left: 0, color: "#003c33", fontWeight: 600 }}>✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div style={{ marginTop: "auto" }}>
+                    <Link href="/kontak" style={{ ...S.pillOutline, fontSize: 13, padding: "8px 16px" }}>
+                      Tanya Sekarang
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section style={{
+          background: "#003c33",
+          color: "#fff",
+          padding: "80px 32px",
+          margin: "0 32px 80px",
+          borderRadius: 22,
+        }} className="full-bleed-mobile">
+          <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
+            <div>
+              <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 16 }}>Mulai Sekarang</p>
+              <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.4px", maxWidth: 480 }}>
+                Butuh layanan forwarder profesional?
+              </h2>
+              <p style={{ fontSize: 16, color: "rgba(255,255,255,0.7)", marginTop: 12 }}>
+                Hubungi kami sekarang untuk penawaran terbaik
+              </p>
+            </div>
             <a
               href="https://wa.me/621234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-[#2962FF] rounded-lg font-bold hover:bg-[#E3F2FD] transition shadow-xl"
+              style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
             >
               Hubungi via WhatsApp
             </a>
           </div>
         </section>
+
       </main>
 
       <Footer />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .two-col { grid-template-columns: 1fr !important; }
+          .three-col { grid-template-columns: 1fr !important; }
+          .doc-grid { grid-template-columns: 1fr !important; }
+          .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
+        }
+        @media (max-width: 1024px) {
+          .three-col { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </div>
   );
 }

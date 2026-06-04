@@ -1,101 +1,167 @@
 import Link from "next/link";
 
+const COLS = [
+  {
+    title: "Layanan",
+    links: [
+      { href: "/layanan", label: "Ekspor" },
+      { href: "/layanan", label: "Impor" },
+      { href: "/layanan", label: "Perizinan" },
+      { href: "/layanan", label: "Dokumentasi" },
+    ],
+  },
+  {
+    title: "Perusahaan",
+    links: [
+      { href: "/tentang",    label: "Tentang Kami" },
+      { href: "/proses",     label: "Proses Kerja" },
+      { href: "/faq",        label: "FAQ" },
+      { href: "/kontak",     label: "Kontak" },
+    ],
+  },
+  {
+    title: "Lainnya",
+    links: [
+      { href: "/persyaratan", label: "Persyaratan" },
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#0D2B6E] to-[#000F2E] text-white mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#2962FF] to-[#00E5FF] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">⚡</span>
-              </div>
-              <span className="font-bold text-lg">Forwarder Express</span>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Jasa forwarder terpercaya untuk kebutuhan ekspor dan impor Anda.
-            </p>
-          </div>
+    <footer style={{ background: "#17171c", color: "#fff", padding: "80px 32px 0" }}>
+      {/* Newsletter */}
+      <div style={{ paddingBottom: 32, borderBottom: "1px solid rgba(255,255,255,0.12)", marginBottom: 32 }}>
+        <p style={{
+          fontFamily: "'Courier New', monospace",
+          fontSize: 12,
+          letterSpacing: "0.28px",
+          textTransform: "uppercase",
+          color: "#ff7759",
+          marginBottom: 12,
+        }}>
+          Ekspor & Impor Mudah
+        </p>
+        <h2 style={{
+          fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+          fontSize: 32,
+          fontWeight: 400,
+          letterSpacing: "-0.5px",
+          marginBottom: 12,
+        }}>
+          Tetap update info logistik
+        </h2>
+        <p style={{ fontSize: 12, color: "#93939f", marginBottom: 16, maxWidth: 440, lineHeight: 1.5 }}>
+          Daftarkan email Anda untuk mendapatkan info terbaru seputar regulasi ekspor-impor dan promo layanan.
+        </p>
+        <form
+          style={{ display: "flex", gap: 8, maxWidth: 400 }}
+          onSubmit={e => e.preventDefault()}
+        >
+          <input
+            type="email"
+            placeholder="email@perusahaan.com"
+            style={{
+              flex: 1,
+              fontFamily: "inherit",
+              fontSize: 14,
+              padding: "10px 16px",
+              border: "1px solid rgba(255,255,255,0.2)",
+              borderRadius: 8,
+              background: "rgba(255,255,255,0.06)",
+              color: "#fff",
+              outline: "none",
+            }}
+          />
+          <button type="submit" style={{
+            background: "none", border: "none",
+            color: "#fff", cursor: "pointer",
+            fontSize: 20, padding: "0 12px",
+          }}>
+            →
+          </button>
+        </form>
+      </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold mb-4">Navigasi</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="/" className="hover:text-white transition">
-                  Beranda
-                </Link>
-              </li>
-              <li>
-                <Link href="/layanan" className="hover:text-white transition">
-                  Layanan
-                </Link>
-              </li>
-              <li>
-                <Link href="/proses" className="hover:text-white transition">
-                  Proses
-                </Link>
-              </li>
-              <li>
-                <Link href="/tentang" className="hover:text-white transition">
-                  Tentang
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-bold mb-4">Layanan</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="/layanan" className="hover:text-white transition">
-                  Ekspor
-                </Link>
-              </li>
-              <li>
-                <Link href="/layanan" className="hover:text-white transition">
-                  Impor
-                </Link>
-              </li>
-              <li>
-                <Link href="/layanan" className="hover:text-white transition">
-                  Perizinan
-                </Link>
-              </li>
-              <li>
-                <Link href="/layanan" className="hover:text-white transition">
-                  Dokumentasi
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-bold mb-4">Hubungi Kami</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li className="flex items-center gap-2">
-                <span>📞</span>
-                <span>+62-812-3456-7890</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span>📧</span>
-                <a href="mailto:info@forwarder.id" className="hover:text-white">
-                  info@forwarder.id
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <span>📍</span>
-                <span>Jakarta, Indonesia</span>
-              </li>
-            </ul>
+      {/* Columns */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+        gap: 32,
+        marginBottom: 32,
+      }}>
+        {/* Brand col */}
+        <div>
+          <p style={{
+            fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+            fontSize: 18, fontWeight: 500,
+            letterSpacing: "-0.3px",
+            marginBottom: 12,
+            display: "flex",
+            alignItems: "baseline",
+            gap: 4,
+          }}>
+            <span style={{ color: "#c0392b", fontWeight: 700 }}>SAFE</span>
+            <span style={{ fontSize: 16 }}>Shipping Services</span>
+          </p>
+          <p style={{ fontSize: 13, color: "#93939f", lineHeight: 1.5 }}>
+            International Freight Forwarder dan Customs Broker sejak 2007.
+          </p>
+          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+            <a href="tel:62212945306" style={{ fontSize: 13, color: "#93939f", textDecoration: "none" }}>📞 (62-21) 2945 2306 - 308</a>
+            <a href="mailto:info@safeshipping.net" style={{ fontSize: 13, color: "#93939f", textDecoration: "none" }}>
+              📧 info@safeshipping.net
+            </a>
+            <span style={{ fontSize: 13, color: "#93939f" }}>📍 Tanjung Priok, Jakarta Utara</span>
+            <span style={{ fontSize: 13, color: "#93939f" }}>🌐 www.safeshipping.net</span>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2026 Forwarder Express. All rights reserved.</p>
+        {COLS.map(col => (
+          <div key={col.title}>
+            <p style={{
+              fontSize: 12, fontWeight: 500,
+              letterSpacing: "0.5px", textTransform: "uppercase",
+              color: "#fff", marginBottom: 16,
+            }}>
+              {col.title}
+            </p>
+            <ul style={{ listStyle: "none" }}>
+              {col.links.map(l => (
+                <li key={l.label} style={{ marginBottom: 12 }}>
+                  <Link href={l.href} style={{ fontSize: 13, color: "#93939f", textDecoration: "none" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#93939f")}
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+        padding: "24px 0 32px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: 12,
+      }}>
+        <span style={{ fontSize: 12, color: "#93939f" }}>© 2026 PT. Safe Shipping Services. All rights reserved. Member of ALFI / ILFA.</span>
+        <div style={{ display: "flex", gap: 24 }}>
+          {["Privasi", "Syarat & Ketentuan"].map(label => (
+            <Link key={label} href="#" style={{
+              fontSize: 12, color: "#93939f",
+              textDecoration: "underline",
+            }}>
+              {label}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

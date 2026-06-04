@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohere — Enterprise AI Platform</title>
+  <link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+
+  <!-- ── Announcement Bar ─────────────────────────────── -->
+  <div class="announcement-bar" id="announcement-bar" role="banner">
+    <span>Cohere Command R+ is now available on all major cloud providers. <a href="#">Learn more</a></span>
+    <button class="announcement-bar__close" id="close-announcement" aria-label="Close announcement">✕</button>
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────────── -->
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="nav__logo" aria-label="Cohere home">Cohere</a>
+      <ul class="nav__links" role="list">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Docs</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="#" class="nav__sign-in">Sign in</a>
+        <a href="#" class="btn-primary">Request a demo</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="#">Products</a>
+      <a href="#">Solutions</a>
+      <a href="#">Research</a>
+      <a href="#">Blog</a>
+      <a href="#">Docs</a>
+      <a href="#">Sign in</a>
+      <a href="#" class="btn-primary" style="align-self:flex-start;margin-top:8px;">Request a demo</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero Section ─────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-headline">
+      <p class="hero__eyebrow t-mono">Enterprise AI Infrastructure</p>
+      <h1 class="hero__headline" id="hero-headline">
+        AI built for the enterprise
+      </h1>
+      <p class="hero__sub t-body-large">
+        Secure, private, and flexible language models for teams that can't compromise on control.
+      </p>
+      <div class="hero__actions">
+        <a href="#" class="btn-primary">Request a demo</a>
+        <button class="btn-secondary">Explore products</button>
+      </div>
+
+      <!-- Hero media: photo card + agent console card -->
+      <div class="hero__media">
+        <!-- Hero Photo Card -->
+        <div class="hero-photo-card" role="img" aria-label="Enterprise AI platform visual">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#003c33 0%,#17171c 100%);"></div>
+          <div class="hero-photo-card__overlay">
+            <span class="t-mono" style="color:rgba(255,255,255,0.5);font-size:11px;">NORTH PLATFORM</span>
+            <p style="color:#fff;font-size:20px;font-weight:400;margin-top:8px;line-height:1.3;">Agents that act.<br>Infrastructure that scales.</p>
+          </div>
+        </div>
+        <!-- Agent Console Card -->
+        <div class="agent-console-card" role="region" aria-label="Agent console preview">
+          <div class="agent-console-card__header">
+            <span class="agent-console-card__title">Research Agent</span>
+            <span class="status-chip status-chip--active">● Active</span>
+          </div>
+          <div class="badge-row">
+            <span class="badge">Web Search</span>
+            <span class="badge">Code Exec</span>
+            <span class="badge">RAG</span>
+          </div>
+          <div class="agent-console-card__prompt">
+            Summarize the latest earnings reports for the top 5 semiconductor companies and identify common themes.
+          </div>
+          <div class="agent-console-card__response">
+            Analyzing TSMC, Nvidia, Intel, AMD, and Qualcomm Q4 filings… AI infrastructure demand is the dominant growth narrative across all five companies, with capex guidance up an average of 34% YoY.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Trust Logo Strip ──────────────────────────────── -->
+    <section class="trust-strip" aria-label="Trusted by leading enterprises">
+      <p class="trust-strip__label t-caption">Trusted by world-class teams</p>
+      <div class="trust-strip__logos">
+        <span class="trust-logo">Oracle</span>
+        <span class="trust-logo">Salesforce</span>
+        <span class="trust-logo">McKinsey</span>
+        <span class="trust-logo">NVIDIA</span>
+        <span class="trust-logo">AWS</span>
+        <span class="trust-logo">SAP</span>
+      </div>
+    </section>
+
+    <!-- ── Capability Cards ──────────────────────────────── -->
+    <section class="capability-section" aria-labelledby="capabilities-heading">
+      <div class="capability-section__header">
+        <p class="section-eyebrow">What we build</p>
+        <h2 class="section-headline" id="capabilities-heading">
+          A complete AI platform for the enterprise
+        </h2>
+      </div>
+      <div class="capability-grid">
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/>
+              <rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">Command</h3>
+          <p class="capability-card__body">High-performance language models optimized for business use cases — summarization, search, and generation at scale.</p>
+          <a href="#" class="capability-card__link">Explore Command →</a>
+        </article>
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">North</h3>
+          <p class="capability-card__body">An enterprise-grade AI assistant and agent platform with tool use, web grounding, and deep system integrations.</p>
+          <a href="#" class="capability-card__link">Explore North →</a>
+        </article>
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 10h12M10 4l6 6-6 6"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">Embed</h3>
+          <p class="capability-card__body">State-of-the-art multilingual embeddings for semantic search, retrieval-augmented generation, and classification.</p>
+          <a href="#" class="capability-card__link">Explore Embed →</a>
+        </article>
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 5h14M3 10h14M3 15h8"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">Rerank</h3>
+          <p class="capability-card__body">Precision ranking of search results and retrieved documents to improve LLM context quality and answer accuracy.</p>
+          <a href="#" class="capability-card__link">Explore Rerank →</a>
+        </article>
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">Fine-tuning</h3>
+          <p class="capability-card__body">Adapt Cohere models to your domain with proprietary data, without compromising privacy or model performance.</p>
+          <a href="#" class="capability-card__link">Get started →</a>
+        </article>
+
+        <article class="capability-card">
+          <div class="capability-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 8h14"/>
+            </svg>
+          </div>
+          <h3 class="capability-card__title">On-prem Deployment</h3>
+          <p class="capability-card__body">Run Cohere models inside your own cloud or data center with full data residency control and private API access.</p>
+          <a href="#" class="capability-card__link">Learn more →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Dark Feature Band ─────────────────────────────── -->
+    <section class="dark-feature-band" aria-labelledby="dark-band-heading">
+      <p class="dark-feature-band__eyebrow">Command Platform</p>
+      <h2 class="dark-feature-band__headline" id="dark-band-heading">
+        Language AI that earns enterprise trust
+      </h2>
+      <p class="dark-feature-band__body">
+        Built with security, compliance, and operational requirements at the core — not bolted on after launch.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#" class="btn-primary btn-primary--light">See Command</a>
+        <button class="btn-pill-outline btn-pill-outline--light">View security docs</button>
+      </div>
+      <div class="dark-feature-cards">
+        <div class="dark-feature-card">
+          <h3 class="dark-feature-card__title">Private Deployment</h3>
+          <p class="dark-feature-card__body">Single-tenant environments on your cloud or ours. Data never leaves your perimeter.</p>
+        </div>
+        <div class="dark-feature-card">
+          <h3 class="dark-feature-card__title">SOC 2 Type II</h3>
+          <p class="dark-feature-card__body">Audited security controls with full compliance reporting available for enterprise procurement.</p>
+        </div>
+        <div class="dark-feature-card">
+          <h3 class="dark-feature-card__title">Role-based Access</h3>
+          <p class="dark-feature-card__body">Granular permissions, SSO integration, and audit logs across all API usage and deployments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Product Cards ─────────────────────────────────── -->
+    <section class="product-section" aria-labelledby="products-heading">
+      <p class="section-eyebrow">Models</p>
+      <h2 class="section-headline" id="products-heading">Choose the right model for your workload</h2>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <span class="product-card__label">Text Generation</span>
+          <h3 class="product-card__title">Command R+</h3>
+          <hr class="product-card__divider">
+          <ul class="product-card__features">
+            <li>128k context window</li>
+            <li>Tool use &amp; RAG-optimized</li>
+            <li>10 languages supported</li>
+            <li>Available on all major clouds</li>
+          </ul>
+          <div class="product-card__cta">
+            <a href="#" class="btn-pill-outline">Try in Playground</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <span class="product-card__label">Embeddings</span>
+          <h3 class="product-card__title">Embed v3</h3>
+          <hr class="product-card__divider">
+          <ul class="product-card__features">
+            <li>1024-dim vectors</li>
+            <li>100+ language support</li>
+            <li>Input type optimization</li>
+            <li>Float, binary &amp; int8 outputs</li>
+          </ul>
+          <div class="product-card__cta">
+            <a href="#" class="btn-pill-outline">Try in Playground</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <span class="product-card__label">Ranking</span>
+          <h3 class="product-card__title">Rerank 3.5</h3>
+          <hr class="product-card__divider">
+          <ul class="product-card__features">
+            <li>100k context support</li>
+            <li>Multi-document ranking</li>
+            <li>Structured data support</li>
+            <li>Plug into any RAG pipeline</li>
+          </ul>
+          <div class="product-card__cta">
+            <a href="#" class="btn-pill-outline">Try in Playground</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Blog Section ──────────────────────────────────── -->
+    <section class="blog-section" aria-labelledby="blog-heading">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+        <h2 class="section-headline" id="blog-heading" style="margin:0;">Latest from Cohere</h2>
+        <a href="#" class="btn-secondary">View all posts</a>
+      </div>
+      <!-- Filter chips -->
+      <div class="blog-filters" role="group" aria-label="Filter posts by category">
+        <button class="blog-filter-chip is-active" data-filter="all">All</button>
+        <button class="blog-filter-chip" data-filter="research">Research</button>
+        <button class="blog-filter-chip" data-filter="product">Product</button>
+        <button class="blog-filter-chip" data-filter="company">Company</button>
+      </div>
+      <!-- Blog cards -->
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card__thumb">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#003c33,#17171c);"></div>
+          </div>
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Research</span>
+            <span>·</span>
+            <time datetime="2026-05-20">May 20, 2026</time>
+          </div>
+          <a href="#" class="blog-card__title">Advancing multilingual understanding in Command R+</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card__thumb">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f1f5ff,#e5e7eb);"></div>
+          </div>
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Product</span>
+            <span>·</span>
+            <time datetime="2026-05-14">May 14, 2026</time>
+          </div>
+          <a href="#" class="blog-card__title">Introducing North: the enterprise AI workspace</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card__thumb">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#eeece7,#d9d9dd);"></div>
+          </div>
+          <div class="blog-card__meta">
+            <span class="blog-card__cat">Company</span>
+            <span>·</span>
+            <time datetime="2026-05-08">May 8, 2026</time>
+          </div>
+          <a href="#" class="blog-card__title">Why we're building AI for the enterprise, not the consumer</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── Research Table ────────────────────────────────── -->
+    <section class="research-section" aria-labelledby="research-heading">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+        <div>
+          <p class="section-eyebrow">Publications</p>
+          <h2 class="section-headline" id="research-heading" style="margin:0;">Research</h2>
+        </div>
+        <a href="#" class="btn-secondary">All publications</a>
+      </div>
+      <!-- Research filters -->
+      <div class="research-filters" role="group" aria-label="Filter research by topic">
+        <button class="btn-pill-outline">All</button>
+        <button class="btn-pill-outline">NLP</button>
+        <button class="btn-pill-outline">Safety</button>
+        <button class="btn-pill-outline">Retrieval</button>
+        <button class="btn-pill-outline">Multilingual</button>
+        <button class="btn-pill-outline">Fine-tuning</button>
+      </div>
+      <!-- Research rows -->
+      <div role="list">
+
+        <div class="research-row" role="listitem">
+          <a href="#" class="research-row__title">
+            Aya Expanse: Combining Research Breakthroughs for a New Multilingual Frontier
+          </a>
+          <div class="research-row__pills">
+            <span class="btn-pill-outline" style="font-size:12px;padding:3px 10px;pointer-events:none;">Multilingual</span>
+            <span class="btn-pill-outline" style="font-size:12px;padding:3px 10px;pointer-events:none;">NLP</span>
+          </div>
+          <time class="research-row__date t-caption" datetime="2026-03">Mar 2026</time>
+        </div>
+
+        <div class="research-row" role="listitem">
+          <a href="#" class="research-row__title">
+            CORAL: Retrieval-Augmented Generation Benchmark for Enterprise Grounding
+          </a>
+          <div class="research-row__pills">
+            <span class="btn-pill-outline" style="font-size:12px;padding:3px 10px;pointer-events:none;">Retrieval</span>
+          </div>
+          <time class="research-row__date t-caption" datetime="2026-01">Jan 2026</time>
+        </div>
+
+        <div class="research-row" role="listitem">
+          <a href="#" class="research-row__title">
+            Scaling Laws for Fine-tuning with Limited Domain Data
+          </a>
+          <div class="research-row__pills">
+            <span class="btn-pill-outline" style="font-size:12px;padding:3px 10px;pointer-events:none;">Fine-tuning</span>
+          </div>
+          <time class="research-row__date t-caption" datetime="2025-11">Nov 2025</time>
+        </div>
+
+        <div class="research-row" role="listitem">
+          <a href="#" class="research-row__title">
+            Constitutional AI Alignment via Iterative Human Feedback in Closed Environments
+          </a>
+          <div class="research-row__pills">
+            <span class="btn-pill-outline" style="font-size:12px;padding:3px 10px;pointer-events:none;">Safety</span>
+          </div>
+          <time class="research-row__date t-caption" datetime="2025-09">Sep 2025</time>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Contact Form Card ─────────────────────────────── -->
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-form-card">
+        <h2 class="contact-form-card__title" id="contact-heading">Talk to our team</h2>
+        <form action="#" method="post" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Jane" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Smith" autocomplete="family-name" required>
+            </div>
+            <div class="form-field">
+              <label for="work-email">Work email</label>
+              <input type="email" id="work-email" name="email" placeholder="jane@company.com" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp" autocomplete="organization">
+            </div>
+            <div class="form-field">
+              <label for="role">Role</label>
+              <select id="role" name="role">
+                <option value="">Select your role</option>
+                <option>Engineering</option>
+                <option>Product</option>
+                <option>Data Science / ML</option>
+                <option>IT / Security</option>
+                <option>Executive</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="company-size">Company size</label>
+              <select id="company-size" name="company_size">
+                <option value="">Select size</option>
+                <option>1–50</option>
+                <option>51–200</option>
+                <option>201–1,000</option>
+                <option>1,001–5,000</option>
+                <option>5,000+</option>
+              </select>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="message">What are you looking to build?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your use case…"></textarea>
+            </div>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Submit request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__newsletter">
+      <p class="footer__newsletter-label">AI moves fast</p>
+      <h2 class="footer__newsletter-title">Stay ahead of the curve</h2>
+      <p class="footer__newsletter-legal">
+        By subscribing you agree to receive Cohere's newsletter. Unsubscribe anytime. We respect your privacy.
+      </p>
+      <form class="footer__newsletter-form" action="#" method="post" aria-label="Newsletter signup">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        <button type="submit" class="footer__newsletter-submit" aria-label="Subscribe">→</button>
+      </form>
+    </div>
+
+    <div class="footer__columns">
+      <div>
+        <p class="footer__col-title">Products</p>
+        <ul class="footer__links">
+          <li><a href="#">Command</a></li>
+          <li><a href="#">North</a></li>
+          <li><a href="#">Embed</a></li>
+          <li><a href="#">Rerank</a></li>
+          <li><a href="#">Playground</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Solutions</p>
+        <ul class="footer__links">
+          <li><a href="#">Financial Services</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Government</a></li>
+          <li><a href="#">Retail</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Developers</p>
+        <ul class="footer__links">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">API Reference</a></li>
+          <li><a href="#">SDKs</a></li>
+          <li><a href="#">Cookbooks</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Company</p>
+        <ul class="footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__bottom-copy">© 2026 Cohere Inc. All rights reserved.</span>
+      <div style="display:flex;gap:24px;">
+        <a href="#" class="footer__bottom-copy" style="text-decoration:underline;">Privacy</a>
+        <a href="#" class="footer__bottom-copy" style="text-decoration:underline;">Terms</a>
+        <a href="#" class="footer__bottom-copy" style="text-decoration:underline;">Security</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Screen reader utility -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+  <script src="design-system.js"></script>
+</body>
+</html>
