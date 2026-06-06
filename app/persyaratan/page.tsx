@@ -41,7 +41,7 @@ const eksporDocs = [
   },
   {
     doc: "Sertifikat Asal (COO)",
-    desc: "Bukti bahwa barang berasal dari Indonesia.",
+    desc: "Bukti bahwa barang berasal dari Indonesia resmi dan sah secara hukum dagang internasional.",
     dari: "Chamber/Asosiasi Dagang",
   },
   {
@@ -133,15 +133,16 @@ export default function Persyaratan() {
         display: "flex",
         flexDirection: "column",
         background: "#fff",
+        overflowX: "hidden",
       }}
     >
       <Header />
 
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, width: "100%" }}>
         {/* Hero */}
-        <section style={{ padding: "50px 32px 64px", background: "#fff" }}>
+        <section style={{ padding: "55px 32px 64px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 16 }}>Persyaratan & Dokumen</p>
+            <p style={{ ...S.mono, marginBottom: 16, textAlign: "left" }}>Persyaratan & Dokumen</p>
             <h1
               style={{
                 fontFamily: "'Space Grotesk', 'Inter', sans-serif",
@@ -152,6 +153,7 @@ export default function Persyaratan() {
                 color: "#17171c",
                 maxWidth: 700,
                 marginBottom: 24,
+                textAlign: "left"
               }}
             >
               Dokumen lengkap untuk ekspor & impor
@@ -162,6 +164,7 @@ export default function Persyaratan() {
                 color: "#616161",
                 maxWidth: 520,
                 lineHeight: 1.5,
+                textAlign: "left"
               }}
             >
               Daftar lengkap dokumen yang dibutuhkan — kami bantu Anda
@@ -171,7 +174,7 @@ export default function Persyaratan() {
         </section>
 
         {/* Persyaratan Umum */}
-        <section style={{ padding: "0 32px 80px", background: "#fff" }}>
+        <section style={{ padding: "0 32px 80px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <p
               style={{
@@ -181,6 +184,7 @@ export default function Persyaratan() {
                 letterSpacing: "0.5px",
                 color: "#17171c",
                 marginBottom: 24,
+                textAlign: "left"
               }}
             >
               Persyaratan Umum
@@ -196,7 +200,7 @@ export default function Persyaratan() {
               <div
                 style={{ background: "#eeece7", borderRadius: 8, padding: 28 }}
               >
-                <p style={{ ...S.mono, marginBottom: 16 }}>Untuk Perusahaan</p>
+                <p style={{ ...S.mono, marginBottom: 16, textAlign: "left" }}>Untuk Perusahaan</p>
                 <ul
                   style={{
                     listStyle: "none",
@@ -219,6 +223,7 @@ export default function Persyaratan() {
                         color: "#616161",
                         paddingLeft: 20,
                         position: "relative",
+                        textAlign: "left"
                       }}
                     >
                       <span
@@ -239,7 +244,7 @@ export default function Persyaratan() {
               <div
                 style={{ background: "#eeece7", borderRadius: 8, padding: 28 }}
               >
-                <p style={{ ...S.mono, marginBottom: 16 }}>Untuk Perorangan</p>
+                <p style={{ ...S.mono, marginBottom: 16, textAlign: "left" }}>Untuk Perorangan</p>
                 <ul
                   style={{
                     listStyle: "none",
@@ -261,6 +266,7 @@ export default function Persyaratan() {
                         color: "#616161",
                         paddingLeft: 20,
                         position: "relative",
+                        textAlign: "left"
                       }}
                     >
                       <span
@@ -283,9 +289,9 @@ export default function Persyaratan() {
         </section>
 
         {/* Dokumen Ekspor */}
-        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+        <section style={{ padding: "80px 32px", background: "#eeece7" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 12 }}>Ekspor</p>
+            <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Ekspor</p>
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -294,6 +300,7 @@ export default function Persyaratan() {
                 letterSpacing: "-0.4px",
                 color: "#17171c",
                 marginBottom: 32,
+                textAlign: "left"
               }}
             >
               Dokumen Ekspor
@@ -302,10 +309,7 @@ export default function Persyaratan() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 1,
-                background: "#d9d9dd",
-                borderRadius: 8,
-                overflow: "hidden",
+                gap: 12, // Memberikan sedikit jarak bernapas antar baris kartu dokumen
               }}
             >
               {eksporDocs.map((item) => (
@@ -313,21 +317,36 @@ export default function Persyaratan() {
                   key={item.doc}
                   style={{
                     background: "#fff",
-                    padding: "20px 28px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    gap: 24,
-                    flexWrap: "wrap",
+                    padding: "24px",
+                    borderRadius: 8,
+                    boxSizing: "border-box"
                   }}
+                  className="flex flex-col md:flex-row md:justify-between md:items-start gap-3 md:gap-6 text-left"
                 >
+                  {/* Penyelaras struktur teks agar badge di HP pindah ke atas */}
                   <div style={{ flex: 1 }}>
+                    <span
+                      style={{
+                        fontFamily: "'Courier New', monospace",
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: "0.5px",
+                        color: "#616161",
+                        background: "#f1f1f4",
+                        padding: "3px 8px",
+                        borderRadius: 4,
+                        marginBottom: 8
+                      }}
+                      className="inline-block md:hidden"
+                    >
+                      {item.dari}
+                    </span>
                     <p
                       style={{
-                        fontSize: 15,
+                        fontSize: 16,
                         fontWeight: 500,
                         color: "#17171c",
-                        marginBottom: 4,
+                        marginBottom: 6,
                       }}
                     >
                       {item.doc}
@@ -342,6 +361,8 @@ export default function Persyaratan() {
                       {item.desc}
                     </p>
                   </div>
+                  
+                  {/* Badge kanan bawaan desktop */}
                   <span
                     style={{
                       fontFamily: "'Courier New', monospace",
@@ -355,6 +376,7 @@ export default function Persyaratan() {
                       whiteSpace: "nowrap",
                       flexShrink: 0,
                     }}
+                    className="hidden md:inline-block"
                   >
                     {item.dari}
                   </span>
@@ -365,9 +387,9 @@ export default function Persyaratan() {
         </section>
 
         {/* Dokumen Impor */}
-        <section style={{ padding: "80px 32px", background: "#fff" }}>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 12 }}>Impor</p>
+            <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Impor</p>
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -376,6 +398,7 @@ export default function Persyaratan() {
                 letterSpacing: "-0.4px",
                 color: "#17171c",
                 marginBottom: 32,
+                textAlign: "left"
               }}
             >
               Dokumen Impor
@@ -384,10 +407,7 @@ export default function Persyaratan() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 1,
-                background: "#d9d9dd",
-                borderRadius: 8,
-                overflow: "hidden",
+                gap: 12,
               }}
             >
               {imporDocs.map((item) => (
@@ -395,21 +415,36 @@ export default function Persyaratan() {
                   key={item.doc}
                   style={{
                     background: "#fff",
-                    padding: "20px 28px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    gap: 24,
-                    flexWrap: "wrap",
+                    padding: "24px",
+                    borderRadius: 8,
+                    border: "1px solid #e5e7eb",
+                    boxSizing: "border-box"
                   }}
+                  className="flex flex-col md:flex-row md:justify-between md:items-start gap-3 md:gap-6 text-left"
                 >
                   <div style={{ flex: 1 }}>
+                    <span
+                      style={{
+                        fontFamily: "'Courier New', monospace",
+                        fontSize: 10,
+                        fontWeight: 600,
+                        letterSpacing: "0.5px",
+                        color: "#616161",
+                        background: "#f1f1f4",
+                        padding: "3px 8px",
+                        borderRadius: 4,
+                        marginBottom: 8
+                      }}
+                      className="inline-block md:hidden"
+                    >
+                      {item.dari}
+                    </span>
                     <p
                       style={{
-                        fontSize: 15,
+                        fontSize: 16,
                         fontWeight: 500,
                         color: "#17171c",
-                        marginBottom: 4,
+                        marginBottom: 6,
                       }}
                     >
                       {item.doc}
@@ -437,6 +472,7 @@ export default function Persyaratan() {
                       whiteSpace: "nowrap",
                       flexShrink: 0,
                     }}
+                    className="hidden md:inline-block"
                   >
                     {item.dari}
                   </span>
@@ -447,9 +483,9 @@ export default function Persyaratan() {
         </section>
 
         {/* Comparison table */}
-        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+        <section style={{ padding: "80px 32px", background: "#eeece7" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 12 }}>Perbandingan</p>
+            <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Perbandingan</p>
             <h2
               style={{
                 fontFamily: "'Inter', sans-serif",
@@ -458,18 +494,21 @@ export default function Persyaratan() {
                 letterSpacing: "-0.4px",
                 color: "#17171c",
                 marginBottom: 32,
+                textAlign: "left"
               }}
             >
               Ekspor vs Impor
             </h2>
+            {/* Dibungkus overflowX auto agar jika tabelnya lebar di HP tidak akan bocor ke kanan */}
             <div
               style={{
                 background: "#fff",
                 borderRadius: 8,
-                overflow: "hidden",
+                overflowX: "auto",
+                WebkitOverflowScrolling: "touch",
               }}
             >
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+              <table style={{ width: "100%", minWidth: 500, borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ background: "#17171c" }}>
                     <th
@@ -528,6 +567,7 @@ export default function Persyaratan() {
                           fontSize: 14,
                           color: "#17171c",
                           fontWeight: 400,
+                          textAlign: "left"
                         }}
                       >
                         {row.jenis}
@@ -543,17 +583,17 @@ export default function Persyaratan() {
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: 12, color: "#93939f", marginTop: 12 }}>
+            <p style={{ fontSize: 12, color: "#93939f", marginTop: 12, textAlign: "left" }}>
               *Tergantung jenis barang yang diekspor/diimpor
             </p>
           </div>
         </section>
 
         {/* Catatan penting */}
-        <section style={{ padding: "80px 32px", background: "#fff" }}>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 32 }}>Catatan Penting</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <p style={{ ...S.mono, marginBottom: 32, textAlign: "left" }}>Catatan Penting</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {[
                 {
                   title: "Dokumen Asli vs Fotokopi",
@@ -578,12 +618,13 @@ export default function Persyaratan() {
                       fontWeight: 500,
                       color: "#17171c",
                       marginBottom: 6,
+                      textAlign: "left"
                     }}
                   >
                     {note.title}
                   </p>
                   <p
-                    style={{ fontSize: 14, color: "#616161", lineHeight: 1.6 }}
+                    style={{ fontSize: 14, color: "#616161", lineHeight: 1.6, textAlign: "left" }}
                   >
                     {note.body}
                   </p>
@@ -598,9 +639,10 @@ export default function Persyaratan() {
           style={{
             background: "#003c33",
             color: "#fff",
-            padding: "80px 32px",
+            padding: "60px 32px",
             margin: "0 32px 80px",
             borderRadius: 22,
+            boxSizing: "border-box"
           }}
           className="full-bleed-mobile"
         >
@@ -615,7 +657,7 @@ export default function Persyaratan() {
               gap: 32,
             }}
           >
-            <div>
+            <div style={{ textAlign: "left" }}>
               <p
                 style={{
                   ...S.mono,
@@ -637,14 +679,16 @@ export default function Persyaratan() {
                 Masih bingung dokumen mana yang diperlukan?
               </h2>
             </div>
-            <a
-              href="https://wa.me/6281314705885"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
-            >
-              Tanya via WhatsApp
-            </a>
+            <div style={{ textAlign: "left" }}>
+              <a
+                href="https://wa.me/6281314705885"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
+              >
+                Tanya via WhatsApp
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -654,7 +698,13 @@ export default function Persyaratan() {
       <style>{`
         @media (max-width: 768px) {
           .two-col { grid-template-columns: 1fr !important; }
-          .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
+          
+          /* Modifikasi agar container hijau seimbang & rapi di layar HP */
+          .full-bleed-mobile { 
+            margin: 0 16px 40px !important; 
+            padding: 48px 24px !important; 
+            border-radius: 16px !important; 
+          }
         }
       `}</style>
     </div>

@@ -66,7 +66,7 @@ export default function Home() {
         display: "flex",
         flexDirection: "column",
         background: "#fff",
-        overflowX: "hidden", // Mencegah seluruh halaman bisa digeser ke kanan
+        overflowX: "hidden", // Mengunci halaman agar tidak bisa digeser ke kanan di HP
       }}
     >
       <Header />
@@ -75,10 +75,11 @@ export default function Home() {
         {/* ── Hero ──────────────────────────────────────── */}
         <section
           style={{
-            padding: "55px 16px", // Dikecilkan dari 32px agar ramah mobile
+            padding: "55px 32px",
             textAlign: "center",
             background: "#fff",
           }}
+          className="px-4 md:px-8"
         >
           <p style={{ ...S.mono, marginBottom: 24 }}>
             International Freight Forwarder & Logistics
@@ -86,7 +87,7 @@ export default function Home() {
           <h1
             style={{
               fontFamily: "'Space Grotesk', 'Inter', sans-serif",
-              fontSize: "clamp(40px, 7vw, 96px)", // Disesuaikan ukuran minimalnya untuk HP
+              fontSize: "clamp(44px, 7vw, 96px)",
               fontWeight: 400,
               lineHeight: 1,
               letterSpacing: "-1.92px",
@@ -99,7 +100,7 @@ export default function Home() {
           </h1>
           <p
             style={{
-              fontSize: 16, // Sedikit lebih kecil di mobile agar rapi
+              fontSize: 18,
               color: "#616161",
               maxWidth: 520,
               margin: "0 auto 32px",
@@ -115,7 +116,7 @@ export default function Home() {
               gap: 16,
               justifyContent: "center",
               flexWrap: "wrap",
-              marginBottom: 60,
+              marginBottom: 80,
             }}
           >
             <Link href="#konsultasi" style={S.pillBtn}>
@@ -131,10 +132,13 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Hero media cards - Menggunakan Full Tailwind Responsive Grid */}
+          {/* Hero media cards */}
           <div
-            style={{ maxWidth: 960, margin: "0 auto" }}
-            className="grid grid-cols-1 md:grid-cols-5 gap-4"
+            style={{
+              maxWidth: 960,
+              margin: "0 auto",
+            }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-4 hero-grid"
           >
             {/* Photo card */}
             <div
@@ -157,7 +161,7 @@ export default function Home() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  backdropFilter: "blur(1px)",
+                  backdropFilter: "blur(0px)",
                   WebkitBackdropFilter: "blur(6px)",
                   background: "rgba(56, 54, 54, 0.45)",
                   borderRadius: 22,
@@ -279,10 +283,11 @@ export default function Home() {
         {/* ── Trust strip ───────────────────────────────── */}
         <section
           style={{
-            padding: "60px 16px",
+            padding: "80px 32px",
             background: "#fff",
             textAlign: "center",
           }}
+          className="px-4"
         >
           <p style={{ ...S.mono, marginBottom: 32 }}>
             Member of ALFI / ILFA — Berdiri sejak 2007
@@ -292,7 +297,7 @@ export default function Home() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 32,
+              gap: 56,
               flexWrap: "wrap",
             }}
           >
@@ -307,7 +312,7 @@ export default function Home() {
                 key={name}
                 style={{
                   fontFamily: "'Space Grotesk', 'Inter', sans-serif",
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: 500,
                   color: "#d9d9dd",
                   letterSpacing: "-0.3px",
@@ -320,32 +325,33 @@ export default function Home() {
         </section>
 
         {/* ── Capability cards (Layanan Kami) ───────────── */}
-        <section style={{ padding: "60px 16px", background: "#fff" }}>
-          <p style={{ ...S.mono, marginBottom: 12 }}>Layanan Kami</p>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
+          <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Layanan Kami</p>
           <h2
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(28px, 3vw, 48px)",
+              fontSize: "clamp(32px, 3vw, 48px)",
               fontWeight: 400,
               lineHeight: 1.2,
               letterSpacing: "-0.48px",
               marginBottom: 32,
               maxWidth: 540,
+              textAlign: "left"
             }}
           >
             Total logistics solution dalam satu platform
           </h2>
-          {/* Diperbaiki penuh menggunakan pure Tailwind Grid (1 kolom di HP) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Diperbaiki dengan grid responsive teratur, layout kembali proporsional */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 w-full">
             {[
               {
                 title: "Sea Freight",
-                desc: "FCL & LCL ocean freight forwarding ke seluruh dunia — worldwide agencies network dan NVOCC operation.",
+                desc: "FCL & LCL ocean freight forwarding ke seluruh dunia — worldwide agencies network and NVOCC operation.",
                 href: "/layanan",
               },
               {
                 title: "Air Freight",
-                desc: "Layanan air freight harian ke/dari semua bandara utama, termasuk customs clearance dan dokumentasi.",
+                desc: "Layanan air freight harian ke/dari semua bandara utama, termasuk customs clearance dan documentation.",
                 href: "/layanan",
               },
               {
@@ -372,10 +378,11 @@ export default function Home() {
               <div
                 key={card.title}
                 style={{
-                  padding: 24,
+                  padding: "24px 0",
                   borderTop: "1px solid #d9d9dd",
                   background: "#fff",
                 }}
+                className="text-left"
               >
                 <h3
                   style={{
@@ -418,25 +425,25 @@ export default function Home() {
           style={{
             background: "#003c33",
             color: "#fff",
-            padding: "56px 24px", // Diturunkan agar pas di HP
-            margin: "0 16px 40px",     // Dikecilkan margin luarnya agar tidak overflow
+            padding: "80px 48px", // Dikembalikan luas untuk desktop
+            margin: "0 32px 40px", // Dikembalikan proporsional ke tengah halaman
             borderRadius: 22,
             boxSizing: "border-box",
           }}
           className="full-bleed-mobile"
         >
-          <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 16, textAlign: "left" }}>
+          <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 24, textAlign: "left" }}>
             Keunggulan Kami
           </p>
           <h2
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(28px, 4vw, 60px)",
+              fontSize: "clamp(36px, 4vw, 60px)",
               fontWeight: 400,
-              lineHeight: 1.2,
+              lineHeight: 1.1,
               letterSpacing: "-1.2px",
               maxWidth: 640,
-              marginBottom: 16,
+              marginBottom: 24,
               textAlign: "left"
             }}
           >
@@ -444,18 +451,28 @@ export default function Home() {
           </h2>
           <p
             style={{
-              fontSize: 16,
-              lineHeight: 1.5,
+              fontSize: 18,
+              lineHeight: 1.4,
               color: "rgba(255,255,255,0.75)",
               maxWidth: 520,
-              marginBottom: 28,
+              marginBottom: 32,
               textAlign: "left"
             }}
           >
             Dibangun sebagai PPJK Company resmi, member ALFI / ILFA, dengan
             jaringan worldwide agencies network.
           </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "flex-start", marginBottom: 35}}>
+          
+          {/* Pembungkus Tombol Aksi - Memberikan spasi bawah konstan agar tidak nempel */}
+          <div 
+            style={{ 
+              display: "flex", 
+              gap: 16, 
+              flexWrap: "wrap", 
+              justifyContent: "flex-start",
+              marginBottom: 44
+            }}
+          >
             <Link
               href="/kontak"
               style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
@@ -474,8 +491,8 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Grid Kartu Hijau Diubah Total Menjadi 1 Kolom via Tailwind */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-14">
+          {/* Grid Kartu Hijau — Menggunakan responsivitas murni, rapi di HP & Desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-0">
             {[
               {
                 title: "Member ALFI / ILFA",
@@ -496,12 +513,12 @@ export default function Home() {
                   background: "rgba(255,255,255,0.06)",
                   border: "1px solid rgba(255,255,255,0.12)",
                   borderRadius: 12,
-                  padding: "24px 20px",
+                  padding: 24,
                   boxSizing: "border-box"
                 }}
                 className="w-full text-left"
               >
-                <h3 style={{ fontSize: 18, fontWeight: 400, marginBottom: 12, lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: 18, fontWeight: 400, marginBottom: 12 }}>
                   {c.title}
                 </h3>
                 <p
@@ -519,21 +536,22 @@ export default function Home() {
         </section>
 
         {/* ── Product / service cards (Paket Layanan) ───── */}
-        <section style={{ padding: "60px 16px", background: "#fff" }}>
-          <p style={{ ...S.mono, marginBottom: 12 }}>Paket Layanan</p>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
+          <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Paket Layanan</p>
           <h2
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(28px, 3vw, 48px)",
+              fontSize: "clamp(32px, 3vw, 48px)",
               fontWeight: 400,
               lineHeight: 1.2,
               letterSpacing: "-0.48px",
               marginBottom: 32,
+              textAlign: "left"
             }}
           >
             Pilih paket yang sesuai
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 label: "Ocean",
@@ -574,17 +592,19 @@ export default function Home() {
                 style={{
                   background: "#eeece7",
                   borderRadius: 8,
-                  padding: 24,
+                  padding: 32,
                   display: "flex",
                   flexDirection: "column",
                   gap: 16,
                 }}
               >
-                <span style={{ ...S.mono }}>{p.label}</span>
-                <h3 style={{ fontSize: 24, fontWeight: 400, lineHeight: 1.2 }}>
+                <span style={{ ...S.mono, textAlign: "left" }}>{p.label}</span>
+                <h3 style={{ fontSize: 24, fontWeight: 400, lineHeight: 1.2, textAlign: "left" }}>
                   {p.title}
                 </h3>
-                <hr style={{ border: "none", borderTop: "1px solid #e5e7eb" }} />
+                <hr
+                  style={{ border: "none", borderTop: "1px solid #e5e7eb" }}
+                />
                 <ul className="flex flex-col gap-2 list-none text-xs md:text-sm">
                   {p.features.map((f) => (
                     <li
@@ -628,16 +648,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Testimoni ─────────────────────────────────── */}
-        <section style={{ padding: "60px 16px", background: "#fff" }}>
-          <p style={{ ...S.mono, marginBottom: 12 }}>Testimoni</p>
+        {/* ── Testimoni ─────────── */}
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
+          <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Testimoni</p>
           <h2
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(28px, 3vw, 48px)",
+              fontSize: "clamp(32px, 3vw, 48px)",
               fontWeight: 400,
               letterSpacing: "-0.48px",
               marginBottom: 32,
+              textAlign: "left"
             }}
           >
             Kata klien kami
@@ -667,7 +688,7 @@ export default function Home() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr auto",
-                gap: 16,
+                gap: 24,
                 alignItems: "center",
                 padding: "24px 0",
                 borderTop: "1px solid #d9d9dd",
@@ -699,13 +720,14 @@ export default function Home() {
         {/* ── Contact form ──────────────────────────────── */}
         <section
           id="konsultasi"
-          style={{ padding: "60px 16px", background: "#eeece7" }}
+          style={{ padding: "80px 32px", background: "#eeece7" }}
+          className="px-4"
         >
           <div
             style={{
               background: "#fff",
               borderRadius: 22,
-              padding: 24,
+              padding: 32,
               maxWidth: 720,
               margin: "0 auto",
               boxSizing: "border-box"
@@ -713,7 +735,7 @@ export default function Home() {
           >
             <h2
               style={{
-                fontSize: 28,
+                fontSize: 32,
                 fontWeight: 400,
                 letterSpacing: "-0.32px",
                 marginBottom: 24,
@@ -722,7 +744,7 @@ export default function Home() {
             >
               Konsultasi Gratis
             </h2>
-            <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+            <form onSubmit={handleSubmit}>
               <div
                 style={{
                   display: "grid",
@@ -745,6 +767,7 @@ export default function Home() {
                     value={form[f.name as keyof typeof form]}
                     onChange={handleChange}
                     style={{
+                      width: "100%",
                       fontFamily: "inherit",
                       fontSize: 15,
                       padding: "12px 16px",
@@ -753,7 +776,6 @@ export default function Home() {
                       background: "#fff",
                       color: "#212121",
                       outline: "none",
-                      width: "100%",
                       boxSizing: "border-box"
                     }}
                     onFocus={(e) =>
@@ -799,11 +821,18 @@ export default function Home() {
 
       <Footer />
 
-      {/* Bagian Media Query CSS yang Dioptimalkan */}
+      {/* CSS Medis Queries yang Presisi dan Sempurna */}
       <style>{`
         @media (max-width: 768px) {
+          .hero-grid  { grid-template-columns: 1fr !important; }
           .form-grid  { grid-template-columns: 1fr !important; }
-          .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
+          
+          /* Menyeimbangkan container hijau saat dibuka di mobile browser */
+          .full-bleed-mobile { 
+            margin: 0 16px 40px !important; 
+            padding: 48px 20px !important; 
+            border-radius: 16px !important; 
+          }
         }
       `}</style>
     </div>
