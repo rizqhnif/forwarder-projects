@@ -50,9 +50,9 @@ const stats = [
 ];
 
 const team = [
-  { name: "Budi Santoso", role: "Direktur Utama", bio: "15+ tahun di industri forwarder Indonesia." },
-  { name: "Siti Nurhaliza", role: "Manager Ekspor", bio: "Spesialis dokumen ekspor komoditas pertanian & farmasi." },
-  { name: "Ahmad Rizki", role: "Manager Impor", bio: "Expert customs clearance & regulasi impor." },
+  { name: "Budi Santoso", role: "Direktur", bio: "15+ tahun di industri forwarder Indonesia." },
+  { name: "Hamidi", role: "Komisaris Utama", bio: "Spesialis dokumen ekspor komoditas pertanian & farmasi." },
+  { name: "Fikrul Manan", role: "Komisaris", bio: "Expert customs clearance & regulasi impor." },
   { name: "Maya Purnama", role: "Customer Success", bio: "Dedicated support untuk kepuasan klien." },
 ];
 
@@ -64,7 +64,7 @@ export default function Tentang() {
       <main style={{ flex: 1 }}>
 
         {/* Hero */}
-        <section style={{ padding: "80px 32px 64px", background: "#fff" }}>
+        <section style={{ padding: "50px 32px 64px", background: "#fff" }}>
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <p style={{ ...S.mono, marginBottom: 16 }}>Tentang Kami</p>
             <h1 style={{
@@ -338,7 +338,7 @@ export default function Tentang() {
           .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
         }
         @media (max-width: 1024px) {
-          .three-col { grid-template-columns: repeat(2, 1fr) !important; }
+          .three-col { grid-template-columns: repeat(1, 1fr) !important; }
           .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>

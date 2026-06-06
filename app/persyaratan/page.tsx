@@ -139,7 +139,7 @@ export default function Persyaratan() {
 
       <main style={{ flex: 1 }}>
         {/* Hero */}
-        <section style={{ padding: "80px 32px 64px", background: "#fff" }}>
+        <section style={{ padding: "50px 32px 64px", background: "#fff" }}>
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <p style={{ ...S.mono, marginBottom: 16 }}>Persyaratan & Dokumen</p>
             <h1
