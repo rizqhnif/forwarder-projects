@@ -338,12 +338,12 @@ export const metadata: Metadata = {
 BEFORE:
 export const siteConfig = {
   contact: {
-    whatsapp: "+62-812-3456-7890",
+    whatsapp: "+62-813-1470-5885",
 
 AFTER:
 export const siteConfig = {
   contact: {
-    whatsapp: "+62-815-1234-5678",
+    whatsapp: "+62-813-1470-5885",
 ```
 
 ### Example 2: Add Team Member

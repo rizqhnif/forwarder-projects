@@ -120,7 +120,7 @@ Website fully responsive di:
 ### WhatsApp Integration
 Semua CTA button terintegrasi dengan WhatsApp:
 - Format: `https://wa.me/[NOMOR]?text=[PESAN]`
-- Nomor saat ini: **+62-812-3456-7890** (ganti dengan nomor asli)
+- Nomor saat ini: **+62-813-1470-5885** (nomor resmi yang digunakan di semua CTA)
 
 ### Email Integration
 - Email kontak: **info@forwarder.id** (ganti dengan email asli)
@@ -140,7 +140,7 @@ Edit file berikut:
 Edit file-file yang ada di footer dan halaman kontak:
 ```typescript
 // Change nomor WhatsApp
-https://wa.me/621234567890  → https://wa.me/[NOMOR_BARU]
+https://wa.me/621234567890  → https://wa.me/6281314705885
 
 // Change email
 info@forwarder.id  → email@anda.com
@@ -213,7 +213,7 @@ export const metadata: Metadata = {
 ## 🐛 Common Issues
 
 ### WhatsApp Link Tidak Terbuka
-Pastikan format nomor benar: `+62-812-3456-7890` atau `6281234567890`
+Pastikan format nomor benar: `+62-813-1470-5885` atau `6281314705885`
 
 ### Styling Tidak Tampil
 Clear cache: `rm -rf .next` lalu `npm run dev`

@@ -13,12 +13,13 @@ export const siteConfig = {
 
   // Contact Information
   contact: {
-    whatsapp: "+62-812-3456-7890",
+    whatsapp: "+62-813-1470-5885",
     email: "info@safeshipping.net",
     phone: "(62-21) 2945 2306",
     phoneAlt: "(62-21) 2945 2304",
     fax: "(62-21) 2945 2304",
-    address: "Jl. Kebon Bawang V No.16/2B RT/RW.011/08, Kel. Kebon Kosong Kec. Tanjung Priok - Jakarta Utara",
+    address:
+      "Jl. Kebon Bawang V No.16/2B RT/RW.011/08, Kel. Kebon Kosong Kec. Tanjung Priok - Jakarta Utara",
     website: "www.safeshipping.net",
   },
 
@@ -26,13 +27,15 @@ export const siteConfig = {
   branches: [
     {
       city: "Pontianak",
-      address: "Jl. H.Rais arrahman, Gunung palong 1 No.3, Pontianak, Kal Bar, Indonesia",
+      address:
+        "Jl. H.Rais arrahman, Gunung palong 1 No.3, Pontianak, Kal Bar, Indonesia",
       phone: "(+62 561) 8104029",
       fax: "(+62 561) 8104029",
     },
     {
       city: "Palembang",
-      address: "Jl. Yos Sudorso Komp.lemabang Mas No.138 DD Rt.002/01, Kel. 3 Ilir, Kec. Ilir Timur II, Palembang Sumatera Selatan, Indonesia",
+      address:
+        "Jl. Yos Sudorso Komp.lemabang Mas No.138 DD Rt.002/01, Kel. 3 Ilir, Kec. Ilir Timur II, Palembang Sumatera Selatan, Indonesia",
       phone: "(+62) 711 5625 131",
       fax: "(+62) 711 5625 132",
     },
@@ -60,37 +63,44 @@ export const siteConfig = {
     {
       icon: "🚢",
       title: "Sea Freight",
-      description: "FCL & LCL ocean freight forwarding ke seluruh dunia dengan jaringan agen global.",
+      description:
+        "FCL & LCL ocean freight forwarding ke seluruh dunia dengan jaringan agen global.",
     },
     {
       icon: "✈️",
       title: "Air Freight",
-      description: "Layanan air freight komprehensif dengan distribusi harian terjamin ke/dari semua bandara utama.",
+      description:
+        "Layanan air freight komprehensif dengan distribusi harian terjamin ke/dari semua bandara utama.",
     },
     {
       icon: "🏝️",
       title: "Domestic Inter-Island",
-      description: "Distribusi antar pulau di Indonesia secara efisien dan kompetitif.",
+      description:
+        "Distribusi antar pulau di Indonesia secara efisien dan kompetitif.",
     },
     {
       icon: "🏭",
       title: "Warehousing",
-      description: "Gudang operasional penuh dan customs container Freight Station (CFS).",
+      description:
+        "Gudang operasional penuh dan customs container Freight Station (CFS).",
     },
     {
       icon: "🚛",
       title: "Inland Trucking",
-      description: "Distribusi domestik untuk semua jenis kargo, full maupun partial truck loads.",
+      description:
+        "Distribusi domestik untuk semua jenis kargo, full maupun partial truck loads.",
     },
     {
       icon: "📦",
       title: "Personal Effect",
-      description: "Layanan global freight untuk pengiriman barang bawaan pribadi ke seluruh dunia.",
+      description:
+        "Layanan global freight untuk pengiriman barang bawaan pribadi ke seluruh dunia.",
     },
     {
       icon: "📋",
       title: "Custom Clearance",
-      description: "Proses clearance cepat menggunakan EDI System sebagai PPJK Company resmi.",
+      description:
+        "Proses clearance cepat menggunakan EDI System sebagai PPJK Company resmi.",
     },
   ],
 
@@ -99,17 +109,20 @@ export const siteConfig = {
     {
       icon: "✅",
       title: "Member ALFI / ILFA",
-      description: "Terdaftar dan diakui secara resmi sebagai anggota asosiasi forwarder internasional.",
+      description:
+        "Terdaftar dan diakui secara resmi sebagai anggota asosiasi forwarder internasional.",
     },
     {
       icon: "⚡",
       title: "EDI System",
-      description: "Custom clearance elektronik dengan EDI System untuk proses yang cepat dan akurat.",
+      description:
+        "Custom clearance elektronik dengan EDI System untuk proses yang cepat dan akurat.",
     },
     {
       icon: "🌍",
       title: "Jaringan Global",
-      description: "Representasi di sebagian besar wilayah industri dunia dengan worldwide agencies network.",
+      description:
+        "Representasi di sebagian besar wilayah industri dunia dengan worldwide agencies network.",
     },
   ],
 
@@ -117,17 +130,20 @@ export const siteConfig = {
   testimonials: [
     {
       name: "PT Maju Jaya",
-      review: "Proses sea freight kami jadi sangat mudah dan cepat. Safe Shipping sangat direkomendasikan!",
+      review:
+        "Proses sea freight kami jadi sangat mudah dan cepat. Safe Shipping sangat direkomendasikan!",
       rating: 5,
     },
     {
       name: "CV Berkah Usaha",
-      review: "Tim mereka sangat profesional dan responsif. Semua dokumen selesai tepat waktu.",
+      review:
+        "Tim mereka sangat profesional dan responsif. Semua dokumen selesai tepat waktu.",
       rating: 5,
     },
     {
       name: "PT Sukses Bersama",
-      review: "Harga kompetitif dan layanan terbaik. Kami rekomendasikan ke seluruh mitra bisnis.",
+      review:
+        "Harga kompetitif dan layanan terbaik. Kami rekomendasikan ke seluruh mitra bisnis.",
       rating: 5,
     },
   ],

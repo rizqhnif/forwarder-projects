@@ -1,46 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  /* Cohere colors */
-  --primary:       #17171c;
-  --ink:           #212121;
-  --deep-green:    #003c33;
-  --canvas:        #ffffff;
-  --soft-stone:    #eeece7;
-  --pale-green:    #edfce9;
-  --hairline:      #d9d9dd;
-  --border-light:  #e5e7eb;
-  --muted:         #93939f;
-  --body-muted:    #616161;
-  --action-blue:   #1863dc;
-  --coral:         #ff7759;
-  --form-focus:    #9b60aa;
-  --focus-blue:    #4c6ee6;
+    /* Cohere colors */
+    --primary: #17171c;
+    --ink: #212121;
+    --deep-green: #003c33;
+    --canvas: #ffffff;
+    --soft-stone: #eeece7;
+    --pale-green: #edfce9;
+    --hairline: #d9d9dd;
+    --border-light: #e5e7eb;
+    --muted: #93939f;
+    --body-muted: #616161;
+    --action-blue: #1863dc;
+    --coral: #ff7759;
+    --form-focus: #9b60aa;
+    --focus-blue: #4c6ee6;
 
-  /* Radius */
-  --r-xs:   4px;
-  --r-sm:   8px;
-  --r-md:   16px;
-  --r-lg:   22px;
-  --r-pill: 32px;
+    /* Radius */
+    --r-xs: 4px;
+    --r-sm: 8px;
+    --r-md: 16px;
+    --r-lg: 22px;
+    --r-pill: 32px;
 
-  --background: var(--canvas);
-  --foreground: var(--ink);
+    --background: var(--canvas);
+    --foreground: var(--ink);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-html { -webkit-font-smoothing: antialiased; }
+html {
+    -webkit-font-smoothing: antialiased;
+}
 
 body {
-  background: var(--canvas);
-  color: var(--ink);
-  font-family: 'Inter', Arial, ui-sans-serif, system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: "Inter", Arial, ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus-blue);
-  outline-offset: 2px;
+    outline: 2px solid var(--focus-blue);
+    outline-offset: 2px;
 }
