@@ -155,8 +155,8 @@ export default function Kontak() {
                 {
                   icon: "📧",
                   label: "Email",
-                  value: "info@safeshipping.net",
-                  href: "mailto:info@safeshipping.net",
+                  value: "info@safeshippingservices.net",
+                  href: "mailto:info@safeshippingservices.net",
                   note: "Balasan dalam 24 jam",
                 },
                 {
