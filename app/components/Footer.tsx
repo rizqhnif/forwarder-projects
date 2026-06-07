@@ -108,10 +108,10 @@ export default function Footer() {
             International Freight Forwarder dan Customs Broker sejak 2007.
           </p>
           <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
-            <a href="tel:6281314705885" style={{ fontSize: 13, color: "#93939f", textDecoration: "none" }}>📞 (62-813) 1470 5885</a>
+            <a href="none" style={{ fontSize: 13, color: "#93939f", textDecoration: "none" }}>📞 (021) - 22436058</a>
             <span style={{ fontSize: 13, color: "#93939f", }}>📍 RUKO ENGGANO LAMA BLOK B. 12 JALAN ENGGANO RAYA NO 15 RT. 000 RW. 000, TANJUNG PRIOK, TANJUNG PRIOK, KOTA ADM. JAKARTA UTARA, DKI JAKARTA
             </span>
-            <span style={{ fontSize: 13, color: "#93939f" }}>🌐 www.safeshipping.net</span>
+            <span style={{ fontSize: 13, color: "#93939f" }}>🌐 info@safeshippingservices.net</span>
           </div>
         </div>
 
