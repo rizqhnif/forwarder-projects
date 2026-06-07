@@ -163,7 +163,7 @@ export default function Kontak() {
                   icon: "📍",
                   label: "Kantor Pusat",
                   value:
-                    "Jl. Kebon Bawang V No.16/2B, Tanjung Priok, Jakarta Utara",
+                    "Ruko Enggano Lama BLOK B. 12 jl. Enggano No 15 RT. 000 RW. 000, Tanjung Priok, KOTA ADM. Jakarta Utara, DKI Jakarta",
                   href: null,
                   note: "Sen–Jum 08:00–17:00 WIB",
                 },
