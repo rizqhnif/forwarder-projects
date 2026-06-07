@@ -49,24 +49,45 @@ const stats = [
   { number: "50+", label: "Negara Tujuan" },
 ];
 
+// 1. TAMBAHKAN URL FOTO PADA ARRAY DATA TIM DI SINI
 const team = [
-  { name: "Budi Santoso", role: "Direktur", bio: "15+ tahun di industri forwarder Indonesia." },
-  { name: "Hamidi", role: "Komisaris Utama", bio: "Spesialis dokumen ekspor komoditas pertanian & farmasi." },
-  { name: "Fikrul Manan", role: "Komisaris", bio: "Expert customs clearance & regulasi impor." },
-  { name: "Maya Purnama", role: "Customer Success", bio: "Dedicated support untuk kepuasan klien." },
+  { 
+    name: "Budi Santoso", 
+    role: "Direktur", 
+    bio: "15+ tahun di industri forwarder Indonesia.",
+    imgUrl: "/team/budi.jpg" // <── Ganti dengan path foto kamu di folder public
+  },
+  { 
+    name: "Hamidi", 
+    role: "Komisaris Utama", 
+    bio: "Spesialis dokumen ekspor komoditas pertanian & farmasi.",
+    imgUrl: "/team/hamidi.jpg" 
+  },
+  { 
+    name: "Fikrul Manan", 
+    role: "Komisaris", 
+    bio: "Expert customs clearance & regulasi impor.",
+    imgUrl: "/team/fikrul.jpg" 
+  },
+  { 
+    name: "Maya Purnama", 
+    role: "Customer Success", 
+    bio: "Dedicated support untuk kepuasan klien.",
+    imgUrl: "/team/maya.jpg" 
+  },
 ];
 
 export default function Tentang() {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#fff" }}>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#fff", overflowX: "hidden" }}>
       <Header />
 
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, width: "100%" }}>
 
         {/* Hero */}
-        <section style={{ padding: "50px 32px 64px", background: "#fff" }}>
+        <section style={{ padding: "55px 32px 64px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 16 }}>Tentang Kami</p>
+            <p style={{ ...S.mono, marginBottom: 16, textAlign: "left" }}>Tentang Kami</p>
             <h1 style={{
               fontFamily: "'Space Grotesk', 'Inter', sans-serif",
               fontSize: "clamp(40px, 5vw, 72px)",
@@ -76,13 +97,14 @@ export default function Tentang() {
               color: "#17171c",
               maxWidth: 700,
               marginBottom: 24,
+              textAlign: "left"
             }}>
               International Freight Forwarder sejak 2007
             </h1>
-            <p style={{ fontSize: 18, color: "#616161", maxWidth: 520, lineHeight: 1.5, marginBottom: 40 }}>
+            <p style={{ fontSize: 18, color: "#616161", maxWidth: 520, lineHeight: 1.5, marginBottom: 40, textAlign: "left" }}>
               PT. Safe Shipping Services — full services International Freight Forwarder & Logistics company, member of ALFI / ILFA.
             </p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "flex-start" }}>
               <Link href="/kontak" style={S.pillBtn}>Hubungi Kami</Link>
               <Link href="/layanan" style={S.pillOutline}>Lihat Layanan →</Link>
             </div>
@@ -90,7 +112,7 @@ export default function Tentang() {
         </section>
 
         {/* Stats */}
-        <section style={{ padding: "0 32px 80px", background: "#fff" }}>
+        <section style={{ padding: "0 32px 80px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <div style={{
               display: "grid",
@@ -121,9 +143,9 @@ export default function Tentang() {
         </section>
 
         {/* Visi Misi */}
-        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+        <section style={{ padding: "80px 32px", background: "#eeece7" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 40 }}>Nilai Perusahaan</p>
+            <p style={{ ...S.mono, marginBottom: 40, textAlign: "left" }}>Nilai Perusahaan</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="three-col">
               {[
                 {
@@ -142,7 +164,7 @@ export default function Tentang() {
                   body: "Integritas, profesionalisme, transparansi, dan kepuasan pelanggan adalah prioritas utama kami.",
                 },
               ].map((v) => (
-                <div key={v.label} style={{ background: "#fff", borderRadius: 8, padding: 28 }}>
+                <div key={v.label} style={{ background: "#fff", borderRadius: 8, padding: 28, textAlign: "left" }}>
                   <p style={{ ...S.mono, marginBottom: 12 }}>{v.label}</p>
                   <h3 style={{ fontSize: 20, fontWeight: 400, color: "#17171c", lineHeight: 1.3, marginBottom: 12 }}>{v.title}</h3>
                   <p style={{ fontSize: 14, color: "#616161", lineHeight: 1.6 }}>{v.body}</p>
@@ -153,7 +175,7 @@ export default function Tentang() {
         </section>
 
         {/* Story */}
-        <section style={{ padding: "80px 32px", background: "#fff" }}>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
             <div style={{
               display: "grid",
@@ -161,7 +183,7 @@ export default function Tentang() {
               gap: 64,
               alignItems: "center",
             }} className="two-col">
-              <div>
+              <div style={{ textAlign: "left" }}>
                 <p style={{ ...S.mono, marginBottom: 16 }}>Cerita Kami</p>
                 <h2 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -186,6 +208,7 @@ export default function Tentang() {
                 borderRadius: 22,
                 padding: 40,
                 color: "#fff",
+                textAlign: "left"
               }}>
                 <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 24 }}>Sertifikasi & Legalitas</p>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 14 }}>
@@ -208,9 +231,9 @@ export default function Tentang() {
         </section>
 
         {/* Team */}
-        <section style={{ padding: "80px 32px", background: "#eeece7" }}>
+        <section style={{ padding: "80px 32px", background: "#eeece7" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 12 }}>Tim Kami</p>
+            <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Tim Kami</p>
             <h2 style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(28px, 3vw, 40px)",
@@ -218,16 +241,35 @@ export default function Tentang() {
               letterSpacing: "-0.4px",
               color: "#17171c",
               marginBottom: 40,
+              textAlign: "left"
             }}>
               Profesional berpengalaman
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }} className="team-grid">
               {team.map((member, i) => {
-                const colors = ["#003c33", "#17171c", "#1863dc", "#9b60aa"];
+                const FallbackColors = ["#003c33", "#17171c", "#1863dc", "#9b60aa"];
                 return (
                   <div key={member.name} style={{ background: "#fff", borderRadius: 8, overflow: "hidden" }}>
-                    <div style={{ height: 120, background: colors[i % colors.length] }} />
-                    <div style={{ padding: 20 }}>
+                    
+                    {/* 2. BAGIAN INI SUDAH DIUBAH MENJADI IMAGE TAG DENGAN OPTIMASI OBJECT-COVER */}
+                    <div style={{ height: 180, width: "100%", background: FallbackColors[i % FallbackColors.length], overflow: "hidden" }}>
+                      {member.imgUrl && (
+                        <img 
+                          src={member.imgUrl} 
+                          alt={member.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover", // Supaya gambar terpotong rapi & proporsional (tidak gepeng)
+                            objectPosition: "center"
+                          }}
+                          // Jika gambar gagal dimuat, container otomatis menampilkan fallback color default bawaan kamu
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                      )}
+                    </div>
+
+                    <div style={{ padding: 20, textAlign: "left" }}>
                       <p style={{ fontSize: 15, fontWeight: 500, color: "#17171c", marginBottom: 4 }}>{member.name}</p>
                       <p style={{ fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.4px", color: "#93939f", marginBottom: 8 }}>{member.role}</p>
                       <p style={{ fontSize: 13, color: "#616161", lineHeight: 1.5 }}>{member.bio}</p>
@@ -240,9 +282,9 @@ export default function Tentang() {
         </section>
 
         {/* Kantor & Cabang */}
-        <section style={{ padding: "80px 32px", background: "#fff" }}>
+        <section style={{ padding: "80px 32px", background: "#fff" }} className="px-4 md:px-8">
           <div style={{ maxWidth: 960, margin: "0 auto" }}>
-            <p style={{ ...S.mono, marginBottom: 12 }}>Our Offices & Branches</p>
+            <p style={{ ...S.mono, marginBottom: 12, textAlign: "left" }}>Our Offices & Branches</p>
             <h2 style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(28px, 3vw, 40px)",
@@ -250,6 +292,7 @@ export default function Tentang() {
               letterSpacing: "-0.4px",
               color: "#17171c",
               marginBottom: 40,
+              textAlign: "left"
             }}>
               3 Lokasi di Indonesia
             </h2>
@@ -284,7 +327,7 @@ export default function Tentang() {
                   fax: "(+62) 711 5625 132",
                 },
               ].map((office) => (
-                <div key={office.city} style={{ background: "#fff", padding: 28 }}>
+                <div key={office.city} style={{ background: "#fff", padding: 28, textAlign: "left" }}>
                   <p style={{ ...S.mono, marginBottom: 8 }}>{office.label}</p>
                   <p style={{ fontSize: 20, fontWeight: 400, color: "#17171c", marginBottom: 12 }}>{office.city}</p>
                   <p style={{ fontSize: 13, color: "#616161", lineHeight: 1.6, marginBottom: 12 }}>{office.address}</p>
@@ -300,12 +343,13 @@ export default function Tentang() {
         <section style={{
           background: "#003c33",
           color: "#fff",
-          padding: "80px 32px",
+          padding: "60px 32px",
           margin: "0 32px 80px",
           borderRadius: 22,
+          boxSizing: "border-box"
         }} className="full-bleed-mobile">
           <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 32 }}>
-            <div>
+            <div style={{ textAlign: "left" }}>
               <p style={{ ...S.mono, color: "rgba(255,255,255,0.5)", marginBottom: 16 }}>Bergabung</p>
               <h2 style={{ fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.4px", maxWidth: 440 }}>
                 Bergabung dengan ratusan klien kami
@@ -314,14 +358,16 @@ export default function Tentang() {
                 Mari wujudkan target ekspor-impor Anda bersama kami
               </p>
             </div>
-            <a
-              href="https://wa.me/621234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
-            >
-              Hubungi Kami Sekarang
-            </a>
+            <div style={{ textAlign: "left" }}>
+              <a
+                href="https://wa.me/6281314705885"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ ...S.pillBtn, background: "#fff", color: "#17171c" }}
+              >
+                Hubungi Kami Sekarang
+              </a>
+            </div>
           </div>
         </section>
 
@@ -335,7 +381,7 @@ export default function Tentang() {
           .three-col { grid-template-columns: 1fr !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .full-bleed-mobile { margin: 0 !important; border-radius: 0 !important; }
+          .full-bleed-mobile { margin: 0 16px 40px !important; padding: 48px 24px !important; border-radius: 16px !important; }
         }
         @media (max-width: 1024px) {
           .three-col { grid-template-columns: repeat(1, 1fr) !important; }
