@@ -378,8 +378,8 @@ export default function Kontak() {
                   style={{ display: "flex", flexDirection: "column", gap: 20 }}
                 >
                   {[
-                    { label: "Telepon", value: "(62-21) 2945 2306 - 308" },
-                    { label: "Fax", value: "(62-21) 2945 2304" },
+                    { label: "Telepon", value: "(021) - 2243 6058" },
+                    { label: "Fax", value: "(021) 2243 6058" },
                     {
                       label: "Jam Kerja",
                       value:
