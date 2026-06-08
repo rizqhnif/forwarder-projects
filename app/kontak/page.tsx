@@ -146,11 +146,9 @@ export default function Kontak() {
             >
               {[
                 {
-                  icon: "💬",
-                  label: "WhatsApp",
-                  value: "+62-813-1470-5885",
-                  href: "https://wa.me/6281314705885",
-                  note: "Respon dalam 1 jam",
+                  icon: "📞",
+                  label: "Telepon",
+                  value: "(021) - 2243 6058",
                 },
                 {
                   icon: "📧",
@@ -385,7 +383,7 @@ export default function Kontak() {
                       value:
                         "Senin–Jumat: 08:00–17:00 WIB\nSabtu: 08:00–13:00 WIB\nMinggu & Libur: Tutup",
                     },
-                    { label: "Email", value: "info@safeshipping.net" },
+                    { label: "Email", value: "info@safeshippingservices.net" },
                   ].map((item) => (
                     <div
                       key={item.label}

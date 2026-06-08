@@ -308,23 +308,23 @@ export default function Tentang() {
                 {
                   city: "Jakarta Utara",
                   label: "Kantor Pusat",
-                  address: "Jl. Kebon Bawang V No.16/2B RT/RW.011/08, Kel. Kebon Kosong, Kec. Tanjung Priok",
-                  phone: "(62-21) 2945 2306 - 308",
-                  fax: "(62-21) 2945 2304",
+                  address: "Ruko Enggano Lama BLOK B. 12 jl. Enggano No 15 RT. 000 RW. 000, Tanjung Priok, KOTA ADM. Jakarta Utara, DKI Jakarta",
+                  phone: "(021) - 2243 6058",
+                  fax: "(021) - 2243 6058",
                 },
                 {
                   city: "Pontianak",
                   label: "Kalimantan Barat",
-                  address: "Jl. H.Rais arrahman, Gunung palong 1 No.3",
-                  phone: "(+62 561) 8104029",
-                  fax: "(+62 561) 8104029",
+                  address: "Ruko Enggano Lama BLOK B. 12 jl. Enggano No 15 RT. 000 RW. 000, Tanjung Priok, KOTA ADM. Jakarta Utara, DKI Jakarta",
+                  phone: "(021) - 2243 6058",
+                  fax: "(021) - 2243 6058",
                 },
                 {
                   city: "Palembang",
                   label: "Sumatera Selatan",
-                  address: "Jl. Yos Sudorso Komp.lemabang Mas No.138 DD Rt.002/01, Kel. 3 Ilir, Kec. Ilir Timur II",
-                  phone: "(+62) 711 5625 131",
-                  fax: "(+62) 711 5625 132",
+                  address: "Ruko Enggano Lama BLOK B. 12 jl. Enggano No 15 RT. 000 RW. 000, Tanjung Priok, KOTA ADM. Jakarta Utara, DKI Jakarta",
+                  phone: "(021) - 2243 6058",
+                  fax: "(021) - 2243 6058",
                 },
               ].map((office) => (
                 <div key={office.city} style={{ background: "#fff", padding: 28, textAlign: "left" }}>
